@@ -26,16 +26,14 @@ public class LoginActivity extends AppCompatActivity {
     public void onLoginPressed(View view) {
         Model model = Model.getInstance();
         String logID = _regCode.getText().toString();
-        int validLogin = Model.Login(logID);
-        boolean checkedIn = false;
+        int validLogin = model.login(logID);
 
         if (validLogin == 0) {
-            if (checkedIn) {
+            if (model.isCheckedIn()) {
                 startActivity(new Intent(getBaseContext(),HotelMainActivity.class));
                 finish();
             }
             startActivity(new Intent(getBaseContext(),CheckInActivity.class));
-            checkedIn = true;
             finish();
         }
         Toast.makeText(getApplicationContext(), "Incorrect Login ID",
