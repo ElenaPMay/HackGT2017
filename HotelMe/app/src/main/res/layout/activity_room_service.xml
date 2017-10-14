@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="gatech.hotelme.Controller.RoomServiceActivity">
+
+    <Button
+        android:id="@+id/complete_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit Order"
+        tools:layout_editor_absoluteX="136dp"
+        tools:layout_editor_absoluteY="447dp" />
+
+    <ListView
+        android:id="@+id/menu"
+        android:layout_width="361dp"
+        android:layout_height="351dp"
+        android:divider="@android:drawable/divider_horizontal_textfield"
+        tools:layout_editor_absoluteX="9dp"
+        tools:layout_editor_absoluteY="70dp" />
+
+    <TextView
+        android:id="@+id/menu_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Menu"
+        android:textSize="36sp"
+        tools:layout_editor_absoluteX="136dp"
+        tools:layout_editor_absoluteY="16dp" />
+</android.support.constraint.ConstraintLayout>

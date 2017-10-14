@@ -15,7 +15,11 @@
         <activity android:name=".Controller.HotelMainActivity" />
         <activity android:name=".Controller.HotelKeyActivity" />
         <activity android:name=".Controller.HotelReservationActivity" />
-        <activity android:name=".Controller.ServicesAndAmenities"></activity>
+        <activity android:name=".Controller.ServicesAndAmenities" />
+        <activity android:name=".Controller.RoomServiceActivity" />
+        <activity android:name=".Controller.CheckOutActivity" />
+        <activity android:name=".Controller.CheckOutSuccess" />
+        <activity android:name=".Controller.HotelInfoActivity"></activity>
     </application>
 
 </manifest>

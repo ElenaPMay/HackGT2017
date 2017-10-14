@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="gatech.hotelme.Controller.CheckOutActivity">
+
+    <TextView
+        android:id="@+id/check_out_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Are you sure you want to check out?"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="49dp"
+        tools:layout_editor_absoluteY="166dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="379dp"
+        android:layout_height="149dp"
+        app:srcCompat="@mipmap/ic_launcher"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="1dp" />
+
+    <TextView
+        android:id="@+id/check_out_text2"
+        android:layout_width="327dp"
+        android:layout_height="31dp"
+        android:text="By completing checkout you're room key will no longer be vaild"
+        android:textAlignment="center"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="203dp" />
+
+    <Button
+        android:id="@+id/complete_check_out"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Complete Check out"
+        tools:layout_editor_absoluteX="104dp"
+        tools:layout_editor_absoluteY="309dp" />
+</android.support.constraint.ConstraintLayout>
