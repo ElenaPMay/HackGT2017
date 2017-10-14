@@ -13,7 +13,7 @@ public class Model {
 
     }
 
-    public Model getInstance() {
+    public static Model getInstance() {
         return instance;
     }
 
@@ -69,15 +69,19 @@ public class Model {
         _reservationManager.set_checkInDate(_stringCheckInDate);
     }
 
-    void set_checkOutDate(String _stringCheckOutDate) {
+    public void set_checkOutDate(String _stringCheckOutDate) {
         _reservationManager.set_checkOutDate(_stringCheckOutDate);
     }
 
-    void set_hotel(String _stringHotel) {
+    public void set_hotel(String _stringHotel) {
         _reservationManager.set_hotel(_stringHotel);
     }
 
-    void set_room(String _roomType, String _roomNum) {
+    public void set_room(String _roomType, String _roomNum) {
         _reservationManager.set_room(_roomType, _roomNum);
+    }
+
+    public int login(String _loginID) {
+        return 0;
     }
 }

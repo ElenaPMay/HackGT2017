@@ -15,12 +15,12 @@ class HotelManager {
         return _instance;
     }
 
-    static void set_currentHotel(String name) {
-        HotelManager._currentHotel = new Hotel(name);
+    static void set_currentHotel(String hotelID, String name) {
+        HotelManager._currentHotel = new Hotel(hotelID, name);
     }
 
-    int get_id() {
-        return _currentHotel.get_id();
+    String get_id() {
+        return _currentHotel.get_hotelID();
     }
 
     String get_name() {

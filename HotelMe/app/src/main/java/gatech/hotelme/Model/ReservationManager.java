@@ -45,7 +45,7 @@ class ReservationManager {
     }
 
     int get_loginNum() {
-        return _currentReservation.get_loginNum();
+        return _currentReservation.get_loginID();
     }
 
     String get_ownerFirstName() {
@@ -57,11 +57,11 @@ class ReservationManager {
     }
 
     int get_creditCardNum() {
-        return _currentReservation.get_creditCardNum();
+        return _currentReservation.get_ownerCreditCardNumber();
     }
 
     int get_bill() {
-        return _currentReservation.get_bill();
+        return _currentReservation.get_ownerBillAmount();
     }
 
     Date get_checkInDate() {
@@ -90,7 +90,7 @@ class ReservationManager {
 
     void set_creditCardNum(String _stringCreditCardNum) {
         int _creditCardNum = Integer.valueOf(_stringCreditCardNum);
-        _currentReservation.set_creditCardNum(_creditCardNum);
+        _currentReservation.set_ownerCreditCardNumber(_creditCardNum);
     }
 
     void set_checkInDate(String _stringCheckInDate) {
