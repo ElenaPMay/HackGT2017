@@ -32,7 +32,7 @@ public class DBHandler extends SQLiteOpenHelper {
     private static final String KEY_ROOM_TYPE = "roomType";
     private static final String KEY_RESERVATION_ID = "reservationID";
 
-    // DBReservation Column Names
+    // Reservation Column Names
     private static final String KEY_LOGIN_ID = "loginID";
     private static final String KEY_OWNER_FIRST_NAME = "ownerFirstName";
     private static final String KEY_OWNER_LAST_NAME = "ownerLastName";
@@ -54,7 +54,7 @@ public class DBHandler extends SQLiteOpenHelper {
             KEY_ROOM_NUMBER + " TEXT PRIMARY KEY," + KEY_RESERVATION_ID + " "
             + "INTEGER," + KEY_ROOM_TYPE + " TEXT" + ")";
 
-    //DBReservation Table Create Statement
+    //Reservation Table Create Statement
     private static final String CREATE_TABLE_RESERVATION = "CREATE TABLE " +
             TABLE_RESERVATION + "(" + KEY_LOGIN_ID + " INTEGER PRIMARY KEY," +
             KEY_OWNER_FIRST_NAME + " TEXT," + KEY_OWNER_LAST_NAME + " TEXT,"
@@ -90,7 +90,7 @@ public class DBHandler extends SQLiteOpenHelper {
      *
      * @param hotel to be added to db
      */
-    public void createHotel(DBHotel hotel) {
+    public void createHotel(Hotel hotel) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -107,7 +107,7 @@ public class DBHandler extends SQLiteOpenHelper {
      * @param hotelID id of hotel to get
      * @return hotel that matches passed in hotelID
      */
-    public DBHotel getDBHotel(String hotelID) {
+    public Hotel getHotel(String hotelID) {
         SQLiteDatabase db = this.getReadableDatabase();
 
         String selectQuery = "SELECT * FROM " + TABLE_HOTEL + " WHERE " +
@@ -119,7 +119,7 @@ public class DBHandler extends SQLiteOpenHelper {
             c.moveToFirst();
         }
 
-        DBHotel hotel = new DBHotel();
+        Hotel hotel = new Hotel();
         hotel.set_hotelID(c.getString(c.getColumnIndex(KEY_HOTEL_ID)));
         hotel.set_hotelID(c.getString(c.getColumnIndex(KEY_HOTEL_NAME)));
 
@@ -131,7 +131,7 @@ public class DBHandler extends SQLiteOpenHelper {
      *
      * @param room to be added to db
      */
-    public void createRoom(DBRoom room) {
+    public void createRoom(Room room) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -152,7 +152,7 @@ public class DBHandler extends SQLiteOpenHelper {
      * @return hotel corresponding to the unique COMBINATION of hotelID and
      * roomNumber
      */
-    public DBRoom getDBRoom(String hotelID, int roomNumber) {
+    public Room getRoom(String hotelID, int roomNumber) {
         SQLiteDatabase db = this.getReadableDatabase();
 
         String selectQuery = "SELECT * FROM " + TABLE_ROOM + " WHERE " +
@@ -165,7 +165,7 @@ public class DBHandler extends SQLiteOpenHelper {
             c.moveToFirst();
         }
 
-        DBRoom room = new DBRoom();
+        Room room = new Room();
         room.set_hotelID(c.getString(c.getColumnIndex(KEY_HOTEL_ID)));
         room.set_roomType(c.getString(c.getColumnIndex(KEY_ROOM_TYPE)));
         room.set_roomNumber(c.getInt(c.getColumnIndex(KEY_ROOM_NUMBER)));
@@ -190,7 +190,7 @@ public class DBHandler extends SQLiteOpenHelper {
         db.insert(TABLE_RESERVATION, null, values);
     }
 
-    public DBReservation getDBReservation(int loginID) {
+    public Reservation getDBReservation(int loginID) {
         SQLiteDatabase db = this.getReadableDatabase();
 
         String selectQuery = "SELECT * FROM " + TABLE_RESERVATION + " WHERE " +
@@ -202,7 +202,7 @@ public class DBHandler extends SQLiteOpenHelper {
             c.moveToFirst();
         }
 
-        DBReservation reservation = new DBReservation();
+        Reservation reservation = new Reservation();
         reservation.set_loginID(c.getInt(c.getColumnIndex(KEY_LOGIN_ID)));
         reservation.set_ownerFirstName(c.getString(c
                 .getColumnIndex(KEY_OWNER_FIRST_NAME)));

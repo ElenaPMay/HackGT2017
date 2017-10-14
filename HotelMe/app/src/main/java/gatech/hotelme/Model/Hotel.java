@@ -4,21 +4,24 @@ import java.util.LinkedList;
 import java.util.List;
 
 class Hotel {
-    private static int hotelCount = 0;
-    private int _id;
+    private String _hotelID;
     private String _name;
     private List<Reservation> _rooms;
     private List<Reservation> _reservations;
 
-    Hotel(String name) {
-        _id = hotelCount++;
-        _name = name;
+    Hotel() {
         _rooms = new LinkedList<>();
         _reservations = new LinkedList<>();
     }
 
-    int get_id() {
-        return _id;
+    Hotel(String hotelID, String name) {
+        this();
+        _hotelID = hotelID;
+        _name = name;
+    }
+
+    String get_hotelID() {
+        return _hotelID;
     }
 
     String get_name() {
@@ -31,6 +34,10 @@ class Hotel {
 
     List<Reservation> get_reservations() {
         return _reservations;
+    }
+
+    void set_hotelID(String _hotelID) {
+        this._hotelID = _hotelID;
     }
 
     void set_name(String _name) {

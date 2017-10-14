@@ -2,27 +2,51 @@ package gatech.hotelme.Model;
 
 class Room {
     private RoomType _roomType;
-    private int _roomNum;
+    private int _roomNumber;
+    private String _hotelID;
+    private int _reservationID;
 
-    Room(RoomType roomType, int roomNum) {
+    Room() {
+
+    }
+
+    Room(RoomType roomType, int roomNum, String hotelID, int reservationID) {
         _roomType = roomType;
-        _roomNum = roomNum;
+        _roomNumber = roomNum;
+        _hotelID = hotelID;
+        _reservationID = reservationID;
     }
 
-    RoomType get_roomType() {
-        return _roomType;
+    String get_roomType() {
+        return _roomType.toString();
     }
 
-    void set_roomType(RoomType _roomType) {
-        this._roomType = _roomType;
+    int get_roomNumber() {
+        return _roomNumber;
     }
 
-    int get_roomNum() {
-        return _roomNum;
+    String get_hotelID() {
+        return _hotelID;
     }
 
-    void set_roomNum(int _roomNum) {
-        this._roomNum = _roomNum;
+    int get_reservationID() {
+        return _reservationID;
+    }
+
+    void set_roomType(String _roomType) {
+        this._roomType = RoomType.valueOf(_roomType);
+    }
+
+    void set_roomNumber(int _roomNumber) {
+        this._roomNumber = _roomNumber;
+    }
+
+    void set_hotelID(String _hotelID) {
+        this._hotelID = _hotelID;
+    }
+
+    void set_reservationID(int _reservationID) {
+        this._reservationID = _reservationID;
     }
 
 }
