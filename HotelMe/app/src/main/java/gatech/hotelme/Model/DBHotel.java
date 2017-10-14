@@ -1,7 +1,7 @@
 package gatech.hotelme.Model;
 
 
-public class DBHotel {
+class DBHotel {
 
     private String _hotelID;
     private String _name;

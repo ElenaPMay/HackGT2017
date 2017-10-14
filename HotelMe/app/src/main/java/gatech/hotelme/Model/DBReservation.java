@@ -1,7 +1,7 @@
 package gatech.hotelme.Model;
 
 
-public class DBReservation {
+class DBReservation {
     private int _loginID;
     private String _ownerFirstName;
     private String _ownerLastName;
