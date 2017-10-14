@@ -17,8 +17,8 @@ class HotelManager {
     private static Map<String, Hotel> _hotels;
     private static DatabaseReference _databaseRef = FirebaseDatabase
             .getInstance().getReference();
-    private static DatabaseReference _testDatabse = _databaseRef.child("test");
-
+    private static DatabaseReference _hotelDatabase = _databaseRef.child
+            ("Hotel");
 
     private HotelManager() {
         _hotels = new HashMap<>();
@@ -26,6 +26,24 @@ class HotelManager {
 
     static HotelManager getInstance() {
         return _instance;
+    }
+
+    void setUp() {
+        _hotelDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot snap: dataSnapshot.getChildren()) {
+                    String hotelID = (String) snap.child("_hotelID").getValue();
+                    String name = (String) snap.child("_name").getValue();
+                    addHotel(hotelID, name);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 
     static void set_currentHotel(String hotelID, String name) {
@@ -40,7 +58,7 @@ class HotelManager {
         return _currentHotel.get_name();
     }
 
-    List<Reservation> get_rooms() {
+    List<Room> get_rooms() {
         return _currentHotel.get_rooms();
     }
 
@@ -52,14 +70,28 @@ class HotelManager {
         _currentHotel.set_name(_name);
     }
 
-    //TODO
+
+
     Hotel getHotel(String name) {
+        return _hotels.get(name);
+    }
+
+    Room getRoom(String hotelName, String roomType, String roomNum) {
+        List<Room> rooms = getHotel(hotelName).get_rooms();
+        for (Room room: rooms) {
+            if (room.get_roomType().toString().equals(roomType) && String
+                    .valueOf(room.get_roomNumber()).equals(roomNum)) {
+                return room;
+            }
+        }
         return null;
     }
 
-    //TODO
-    Room getRoom(String roomType, String roomNum) {
-        return null;
+    void addHotel(String hotelID, String name) {
+        Hotel hotel = new Hotel(hotelID, name);
+        _hotels.put(hotelID, hotel);
+        Map<String, Object> update = new HashMap<>();
+        update.put(hotelID, hotel);
+        _hotelDatabase.updateChildren(update);
     }
-
 }

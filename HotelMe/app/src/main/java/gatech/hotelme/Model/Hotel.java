@@ -6,7 +6,7 @@ import java.util.List;
 class Hotel {
     private String _hotelID;
     private String _name;
-    private List<Reservation> _rooms;
+    private List<Room> _rooms;
     private List<Reservation> _reservations;
 
     Hotel() {
@@ -28,7 +28,7 @@ class Hotel {
         return _name;
     }
 
-    List<Reservation> get_rooms() {
+    List<Room> get_rooms() {
         return _rooms;
     }
 
@@ -44,7 +44,7 @@ class Hotel {
         this._name = _name;
     }
 
-    public void set_rooms(List<Reservation> _rooms) {
+    public void set_rooms(List<Room> _rooms) {
         this._rooms = _rooms;
     }
 

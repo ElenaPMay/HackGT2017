@@ -4,12 +4,20 @@ import java.util.Date;
 
 public class Model {
     private static final Model instance = new Model();
-    private static final ReservationManager _reservationManager =
-            ReservationManager.getInstance();
-    private final HotelManager _hotelManager = HotelManager.getInstance();
+    private final ReservationManager _reservationManager;
+    private final HotelManager _hotelManager;
 
     private Model() {
+        _reservationManager = ReservationManager.getInstance();
+        _hotelManager = HotelManager.getInstance();
+        setUp();
+    }
 
+    private void setUp() {
+        _reservationManager.setUp();
+        _hotelManager.setUp();
+        _hotelManager.addHotel("hotelid", "hotelnam");
+        _reservationManager.addReservation(new Reservation());
     }
 
     public static Model getInstance() {
@@ -86,5 +94,9 @@ public class Model {
 
     public boolean isCheckedIn() {
         return false;
+    }
+
+    public void addHotel(String hotelID, String name) {
+        _hotelManager.addHotel(hotelID, name);
     }
 }

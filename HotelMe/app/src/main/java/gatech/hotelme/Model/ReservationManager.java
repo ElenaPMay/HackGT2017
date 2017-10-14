@@ -1,9 +1,17 @@
 package gatech.hotelme.Model;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
 
 class ReservationManager {
@@ -14,14 +22,36 @@ class ReservationManager {
     private static final DateFormat _formatter = new SimpleDateFormat
             ("MM/dd/yyyy");
     private Map<Integer, Reservation> _reservations;
+    private static DatabaseReference _databaseRef = FirebaseDatabase
+            .getInstance().getReference();
+    private static DatabaseReference _reservationDatabase = _databaseRef
+            .child("Reservation");
 
 
     private ReservationManager() {
-
+        _reservations = new HashMap<>();
     }
 
     static ReservationManager getInstance() {
         return _instance;
+    }
+
+    void setUp() {
+        _reservationDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot snap : dataSnapshot.getChildren()) {
+                    System.out.println("HEREREREREKFJKDJFKDJKAFJKAJF");
+                    Reservation reservation = snap.getValue(Reservation.class);
+                    addReservation(reservation);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 
     static void set_currentReservation(String ownerFirstName, String
@@ -40,7 +70,7 @@ class ReservationManager {
             System.exit(0);
         }
         Hotel hotel = _hotelManager.getHotel(stringHotel);
-        Room room = _hotelManager.getRoom(roomType, roomNum);
+        Room room = _hotelManager.getRoom(stringHotel, roomType, roomNum);
         ReservationManager._currentReservation = new Reservation
                 (ownerFirstName, ownerLastName, creditCardNum, bill,
                 checkInDate, checkOutDate, hotel, room);
@@ -127,7 +157,15 @@ class ReservationManager {
     }
 
     void set_room(String _roomType, String _roomNum) {
-        Room _room = _hotelManager.getRoom(_roomType, _roomNum);
+        Room _room = _hotelManager.getRoom(_currentReservation.get_hotel()
+                        .get_name(), _roomType, _roomNum);
         _currentReservation.set_room(_room);
+    }
+
+    void addReservation(Reservation reservation) {
+        _reservations.put(reservation.get_loginID(), reservation);
+        Map<String, Object> update = new HashMap<>();
+        update.put(String.valueOf(reservation.get_loginID()), reservation);
+        _reservationDatabase.updateChildren(update);
     }
 }
