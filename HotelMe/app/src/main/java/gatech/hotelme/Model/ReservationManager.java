@@ -170,8 +170,18 @@ class ReservationManager {
     }
 
     int login(String _loginID) {
-        return _reservations.keySet().contains(Integer.valueOf(_loginID)) ?
-                0 : 1;
+        int loginID;
+        try {
+            loginID = Integer.valueOf(_loginID);
+        } catch (Exception e) {
+            return 1;
+        }
+        if (_reservations.keySet().contains(loginID)) {
+            _currentReservation = _reservations.get(loginID);
+            return 0;
+        } else {
+            return 1;
+        }
     }
 
     void set_checkedIn(boolean checkedIn) {

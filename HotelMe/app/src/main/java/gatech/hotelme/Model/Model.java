@@ -89,14 +89,15 @@ public class Model {
     }
 
     public int login(String _loginID) {
-        if (_reservationManager.login(_loginID) == 1) {
+        if (_reservationManager.login(_loginID) == 0) {
             _hotelManager.login(_loginID);
+            return 0;
         }
-        return 0;
+        return 1;
     }
 
     public boolean isCheckedIn() {
-        return false;
+        return _reservationManager.is_checkedIn();
     }
 
     public void addHotel(String hotelID, String name) {
