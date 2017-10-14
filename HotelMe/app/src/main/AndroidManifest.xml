@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="gatech.hotelme">
+    package="gatech.hotelme">
 
     <application
         android:allowBackup="true"
@@ -9,8 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Controller.LoginActivity">
-        </activity>
+        <activity android:name=".Controller.LoginActivity" />
+        <activity android:name=".Controller.CheckInActivity" />
+        <activity android:name=".Controller.SuccessCheckInActivity" />
+        <activity android:name=".Controller.HotelMainActivity" />
+        <activity android:name=".Controller.HotelKeyActivity" />
+        <activity android:name=".Controller.HotelReservationActivity" />
+        <activity android:name=".Controller.ServicesAndAmenities"></activity>
     </application>
 
 </manifest>
