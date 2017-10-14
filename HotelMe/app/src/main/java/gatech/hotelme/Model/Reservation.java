@@ -76,10 +76,6 @@ class Reservation {
         this._creditCardNum = _creditCardNum;
     }
 
-    void set_bill(int _bill) {
-        this._bill = _bill;
-    }
-
     void set_checkInDate(Date _checkInDate) {
         this._checkInDate = _checkInDate;
     }

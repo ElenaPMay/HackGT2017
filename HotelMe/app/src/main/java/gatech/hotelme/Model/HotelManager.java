@@ -39,4 +39,14 @@ class HotelManager {
         _currentHotel.set_name(_name);
     }
 
+    //TODO
+    Hotel getHotel(String name) {
+        return null;
+    }
+
+    //TODO
+    Room getRoom(String roomType, String roomNum) {
+        return null;
+    }
+
 }
