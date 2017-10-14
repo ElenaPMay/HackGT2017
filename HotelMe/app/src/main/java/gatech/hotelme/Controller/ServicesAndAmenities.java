@@ -1,6 +1,7 @@
 package gatech.hotelme.Controller;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,5 +26,13 @@ public class ServicesAndAmenities extends AppCompatActivity {
 
     public void onGoogleMapsPressed(View view) {
         startActivity(new Intent(getBaseContext(), MapsActivity.class));
+    }
+
+    public void oncleaning_service_Pressed(View v) {
+        dialContactPhone("7068251740");
+    }
+
+    private void dialContactPhone(final String phoneNumber) {
+        startActivity(new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phoneNumber, null)));
     }
 }

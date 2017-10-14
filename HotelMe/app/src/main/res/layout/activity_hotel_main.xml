@@ -23,6 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Call Front Desk"
+        android:onClick="oncallPressed"
         tools:layout_editor_absoluteX="121dp"
         tools:layout_editor_absoluteY="249dp"
         android:layout_marginBottom="18dp"
