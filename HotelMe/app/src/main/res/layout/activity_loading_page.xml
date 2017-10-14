@@ -11,8 +11,8 @@
         android:layout_width="550dp"
         android:layout_height="984dp"
         app:srcCompat="@drawable/plane"
-        tools:layout_editor_absoluteX="-50dp"
-        tools:layout_editor_absoluteY="-208dp" />
+        tools:layout_editor_absoluteX="-49dp"
+        tools:layout_editor_absoluteY="-204dp" />
 
     <TextView
         android:id="@+id/textView7"
