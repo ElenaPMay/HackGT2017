@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -13,7 +13,10 @@
         android:onClick="onSumbitOrderPressed"
         android:text="Submit Order"
         tools:layout_editor_absoluteX="136dp"
-        tools:layout_editor_absoluteY="447dp" />
+        tools:layout_editor_absoluteY="447dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="21dp" />
 
     <ListView
         android:id="@+id/menu"
@@ -21,7 +24,10 @@
         android:layout_height="351dp"
         android:divider="@android:drawable/divider_horizontal_textfield"
         tools:layout_editor_absoluteX="9dp"
-        tools:layout_editor_absoluteY="70dp" />
+        tools:layout_editor_absoluteY="70dp"
+        android:layout_marginBottom="22dp"
+        android:layout_above="@+id/complete_order"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/menu_text"
@@ -30,5 +36,8 @@
         android:text="Menu"
         android:textSize="36sp"
         tools:layout_editor_absoluteX="136dp"
-        tools:layout_editor_absoluteY="16dp" />
-</android.support.constraint.ConstraintLayout>
+        tools:layout_editor_absoluteY="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

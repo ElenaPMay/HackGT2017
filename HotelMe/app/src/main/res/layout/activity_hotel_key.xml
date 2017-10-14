@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,7 +12,10 @@
         android:layout_height="307dp"
         android:background="@drawable/qr_code"
         tools:layout_editor_absoluteX="27dp"
-        tools:layout_editor_absoluteY="124dp" />
+        tools:layout_editor_absoluteY="124dp"
+        android:layout_marginTop="17dp"
+        android:layout_below="@+id/room_text"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/welcome_text"
@@ -21,7 +24,11 @@
         android:text="Welcome, "
         android:textSize="30sp"
         tools:layout_editor_absoluteX="62dp"
-        tools:layout_editor_absoluteY="16dp" />
+        tools:layout_editor_absoluteY="16dp"
+        android:layout_marginTop="29dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/room_key_qr_code"
+        android:layout_marginStart="30dp" />
 
     <TextView
         android:id="@+id/user_name"
@@ -30,13 +37,21 @@
         android:text="name"
         android:textSize="30sp"
         tools:layout_editor_absoluteX="210dp"
-        tools:layout_editor_absoluteY="16dp" />
+        tools:layout_editor_absoluteY="16dp"
+        android:layout_alignBaseline="@+id/welcome_text"
+        android:layout_alignBottom="@+id/welcome_text"
+        android:layout_toEndOf="@+id/welcome_text"
+        android:layout_marginStart="17dp" />
 
     <TextView
         android:id="@+id/room_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/welcome_text"
+        android:layout_below="@+id/welcome_text"
+        android:layout_marginTop="29dp"
         android:text="Room: "
+        android:textAlignment="textEnd"
         android:textSize="24sp"
         tools:layout_editor_absoluteX="128dp"
         tools:layout_editor_absoluteY="72dp" />
@@ -48,7 +63,10 @@
         android:text="XXX"
         android:textSize="24sp"
         tools:layout_editor_absoluteX="210dp"
-        tools:layout_editor_absoluteY="72dp" />
+        tools:layout_editor_absoluteY="72dp"
+        android:layout_alignBaseline="@+id/room_text"
+        android:layout_alignBottom="@+id/room_text"
+        android:layout_alignStart="@+id/user_name" />
 
     <Button
         android:id="@+id/back_to_home"
@@ -57,5 +75,8 @@
         android:onClick="onHomePressed"
         android:text="Home"
         tools:layout_editor_absoluteX="171dp"
-        tools:layout_editor_absoluteY="463dp" />
-</android.support.constraint.ConstraintLayout>
+        tools:layout_editor_absoluteY="463dp"
+        android:layout_marginBottom="26dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
