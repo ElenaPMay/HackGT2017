@@ -10,6 +10,7 @@
         android:id="@+id/complete_order"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="onSumbitOrderPressed"
         android:text="Submit Order"
         tools:layout_editor_absoluteX="136dp"
         tools:layout_editor_absoluteY="447dp" />
