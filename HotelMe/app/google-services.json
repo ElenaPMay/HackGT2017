@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "399957865787",
+    "firebase_url": "https://hotelme-db63f.firebaseio.com",
+    "project_id": "hotelme-db63f",
+    "storage_bucket": "hotelme-db63f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:399957865787:android:cdcebd5275c589f0",
+        "android_client_info": {
+          "package_name": "gatech.hotelme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "399957865787-3uhshdlagq83cna934re5kh6aere568t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPZwNDnAh6VKn1jOGRnbRxEHbkGpVysJQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
