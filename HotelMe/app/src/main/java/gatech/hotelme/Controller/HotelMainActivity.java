@@ -20,5 +20,13 @@ public class HotelMainActivity extends AppCompatActivity {
         finish();
     }
 
+    public void onServicesPressed(View view) {
+        startActivity(new Intent(getBaseContext(), ServicesAndAmenities.class));
+        finish();
+    }
 
+    public void onResInfoPressed(View view){
+        startActivity(new Intent(getBaseContext(), HotelReservationActivity.class));
+        finish();
+    }
 }
