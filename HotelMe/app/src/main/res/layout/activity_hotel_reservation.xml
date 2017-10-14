@@ -10,7 +10,7 @@
     android:id="@+id/imageButton"
     android:layout_width="375dp"
     android:layout_height="137dp"
-        android:background="@drawable/Marriott"
+        android:background="@drawable/marriott"
     tools:layout_editor_absoluteX="2dp"
     tools:layout_editor_absoluteY="-2dp"
     android:layout_alignParentTop="true"

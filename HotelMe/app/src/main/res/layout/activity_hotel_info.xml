@@ -10,7 +10,7 @@
         android:id="@+id/imageView3"
         android:layout_width="384dp"
         android:layout_height="276dp"
-        android:background="@drawable/Marriott"
+        android:background="@drawable/marriott"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="5dp" />
 
