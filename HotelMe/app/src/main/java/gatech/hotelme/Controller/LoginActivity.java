@@ -30,8 +30,9 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(new Intent(getBaseContext(),HotelMainActivity.class));
             }
             startActivity(new Intent(getBaseContext(),CheckInActivity.class));
+        } else {
+            Toast.makeText(getApplicationContext(), "Incorrect Login ID",
+                    Toast.LENGTH_SHORT).show();
         }
-        Toast.makeText(getApplicationContext(), "Incorrect Login ID",
-                Toast.LENGTH_SHORT).show();
     }
 }
