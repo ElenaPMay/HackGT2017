@@ -20,6 +20,12 @@ public class HotelMainActivity extends AppCompatActivity {
         finish();
     }
 
+    public void onCheckOutPressed(View view) {
+        startActivity(new Intent(getBaseContext(),CheckOutActivity.class));
+        finish();
+    }
+
+
     public void onServicesPressed(View view) {
         startActivity(new Intent(getBaseContext(), ServicesAndAmenities.class));
         finish();
