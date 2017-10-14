@@ -6,8 +6,7 @@ public class Model {
     private static final Model instance = new Model();
     private static final ReservationManager _reservationManager =
             ReservationManager.getInstance();
-    private static final HotelManager _hotelManager = HotelManager
-            .getInstance();
+    private final HotelManager _hotelManager = HotelManager.getInstance();
 
     private Model() {
 

@@ -4,14 +4,16 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Map;
 
 class ReservationManager {
     private static final ReservationManager _instance = new
             ReservationManager();
     private static Reservation _currentReservation;
     private static final HotelManager _hotelManager = HotelManager.getInstance();
-    private static final DateFormat formatter = new SimpleDateFormat
-            ("MM/dd/yyyy");;
+    private static final DateFormat _formatter = new SimpleDateFormat
+            ("MM/dd/yyyy");
+    private Map<Integer, Reservation> _reservations;
 
 
     private ReservationManager() {
@@ -31,8 +33,8 @@ class ReservationManager {
         Date checkInDate =  null;
         Date checkOutDate = null;
         try {
-            checkInDate = formatter.parse(stringCheckInDate);
-            checkOutDate = formatter.parse(stringCheckOutDate);
+            checkInDate = _formatter.parse(stringCheckInDate);
+            checkOutDate = _formatter.parse(stringCheckOutDate);
         } catch (ParseException e) {
             e.printStackTrace();
             System.exit(0);
@@ -100,7 +102,7 @@ class ReservationManager {
     void set_checkInDate(String _stringCheckInDate) {
         Date _checkInDate = null;
         try {
-            _checkInDate = formatter.parse(_stringCheckInDate);
+            _checkInDate = _formatter.parse(_stringCheckInDate);
         }  catch (ParseException e) {
             e.printStackTrace();
             System.exit(0);
@@ -111,7 +113,7 @@ class ReservationManager {
     void set_checkOutDate(String _stringCheckOutDate) {
         Date _checkOutDate = null;
         try {
-            _checkOutDate = formatter.parse(_stringCheckOutDate);
+            _checkOutDate = _formatter.parse(_stringCheckOutDate);
         }  catch (ParseException e) {
             e.printStackTrace();
             System.exit(0);

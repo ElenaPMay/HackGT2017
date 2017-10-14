@@ -12,7 +12,6 @@ class Reservation {
     private Date _checkInDate;
     private Date _checkOutDate;
     private Hotel _hotel;
-    private String _hotelID;
     private Room _room;
     private boolean _checkedIn;
 
@@ -31,7 +30,6 @@ class Reservation {
         _checkInDate = checkInDate;
         _checkOutDate = checkOutDate;
         _hotel = hotel;
-        _hotelID = _hotel.get_hotelID();
         _room = room;
     }
 
@@ -105,10 +103,6 @@ class Reservation {
 
     void set_hotel(Hotel _hotel) {
         this._hotel = _hotel;
-    }
-
-    void set_hotelID(String _hotelID) {
-        this._hotelID = _hotelID;
     }
 
     void set_room(Room _room) {
