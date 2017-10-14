@@ -17,11 +17,9 @@ public class SuccessCheckInActivity extends AppCompatActivity {
 
     public void onHomePressed(View view) {
         startActivity(new Intent(getBaseContext(),HotelMainActivity.class));
-        finish();
     }
 
     public void onGetKeyPressed(View view) {
         startActivity(new Intent(getBaseContext(), HotelKeyActivity.class));
-        finish();
     }
 }

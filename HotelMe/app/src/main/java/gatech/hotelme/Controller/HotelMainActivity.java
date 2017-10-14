@@ -17,22 +17,18 @@ public class HotelMainActivity extends AppCompatActivity {
 
     public void onGetKeyPressed(View view) {
         startActivity(new Intent(getBaseContext(),HotelKeyActivity.class));
-        finish();
     }
 
     public void onCheckOutPressed(View view) {
         startActivity(new Intent(getBaseContext(),CheckOutActivity.class));
-        finish();
     }
 
 
     public void onServicesPressed(View view) {
         startActivity(new Intent(getBaseContext(), ServicesAndAmenities.class));
-        finish();
     }
 
     public void onResInfoPressed(View view){
         startActivity(new Intent(getBaseContext(), HotelReservationActivity.class));
-        finish();
     }
 }

@@ -17,7 +17,6 @@ public class HotelKeyActivity extends AppCompatActivity {
 
     public void onHomePressed(View view) {
         startActivity(new Intent(getBaseContext(),HotelMainActivity.class));
-        finish();
     }
 
 }
