@@ -168,4 +168,9 @@ class ReservationManager {
         update.put(String.valueOf(reservation.get_loginID()), reservation);
         _reservationDatabase.updateChildren(update);
     }
+
+    int login(String _loginID) {
+        return _reservations.keySet().contains(Integer.valueOf(_loginID)) ?
+                0 : 1;
+    }
 }

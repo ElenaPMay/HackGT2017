@@ -94,4 +94,15 @@ class HotelManager {
         update.put(hotelID, hotel);
         _hotelDatabase.updateChildren(update);
     }
+
+    void login(String loginID) {
+        for (Hotel hotel: _hotels.values()) {
+            for (Reservation reservation: hotel.get_reservations()) {
+                if (String.valueOf(reservation).equals(loginID)) {
+                    _currentHotel = hotel;
+                    return;
+                }
+            }
+        }
+    }
 }

@@ -89,6 +89,9 @@ public class Model {
     }
 
     public int login(String _loginID) {
+        if (_reservationManager.login(_loginID) == 1) {
+            _hotelManager.login(_loginID);
+        }
         return 0;
     }
 
