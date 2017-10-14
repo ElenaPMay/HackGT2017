@@ -10,13 +10,14 @@
         android:id="@+id/hotel_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/room_service"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/colorPrimaryDark"
         android:onClick="onHotelInfoPressed"
         android:text="hotel info"
         tools:layout_editor_absoluteX="141dp"
-        tools:layout_editor_absoluteY="183dp"
-        android:layout_above="@+id/room_service"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="16dp" />
+        tools:layout_editor_absoluteY="183dp" />
 
     <ImageButton
         android:id="@+id/imageButton3"
@@ -32,43 +33,47 @@
         android:id="@+id/room_service"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/cleaning_service"
+        android:layout_alignEnd="@+id/search_google_maps"
+        android:backgroundTint="@color/colorPrimaryDark"
         android:onClick="onRoomServicePressed"
         android:text="Room Service"
         tools:layout_editor_absoluteX="131dp"
-        tools:layout_editor_absoluteY="251dp"
-        android:layout_above="@+id/cleaning_service"
-        android:layout_alignEnd="@+id/search_google_maps" />
+        tools:layout_editor_absoluteY="251dp" />
 
     <Button
         android:id="@+id/cleaning_service"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cleaning Service"
-        android:onClick="oncleaning_service_Pressed"
-        tools:layout_editor_absoluteX="117dp"
-        tools:layout_editor_absoluteY="323dp"
-        android:layout_marginBottom="13dp"
         android:layout_above="@+id/hotel_resturant"
-        android:layout_alignStart="@+id/hotel_resturant" />
+        android:layout_alignStart="@+id/hotel_resturant"
+        android:layout_marginBottom="13dp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:onClick="oncleaning_service_Pressed"
+        android:text="Cleaning Service"
+        tools:layout_editor_absoluteX="117dp"
+        tools:layout_editor_absoluteY="323dp" />
 
     <Button
         android:id="@+id/hotel_resturant"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="hotel resturant"
-        tools:layout_editor_absoluteX="116dp"
-        tools:layout_editor_absoluteY="394dp"
         android:layout_above="@+id/search_google_maps"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="13dp" />
+        android:layout_marginBottom="13dp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:text="hotel resturant"
+        tools:layout_editor_absoluteX="116dp"
+        tools:layout_editor_absoluteY="394dp" />
 
     <Button
         android:id="@+id/search_google_maps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Google maps"
-        android:onClick="onGoogleMapsPressed"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="33dp" />
+        android:layout_marginBottom="33dp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:onClick="onGoogleMapsPressed"
+        android:text="Google maps" />
 </RelativeLayout>

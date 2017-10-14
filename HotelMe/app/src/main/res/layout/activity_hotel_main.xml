@@ -10,49 +10,53 @@
         android:id="@+id/room_key"
         android:layout_width="140dp"
         android:layout_height="50dp"
-        android:text="Get Room Key"
-        android:onClick="onGetKeyPressed"
-        tools:layout_editor_absoluteX="122dp"
-        tools:layout_editor_absoluteY="177dp"
         android:layout_above="@+id/call_service"
         android:layout_alignEnd="@+id/call_service"
-        android:layout_marginBottom="28dp" />
+        android:layout_marginBottom="28dp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:onClick="onGetKeyPressed"
+        android:text="Get Room Key"
+        tools:layout_editor_absoluteX="122dp"
+        tools:layout_editor_absoluteY="177dp" />
 
     <Button
         android:id="@+id/call_service"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Call Front Desk"
-        android:onClick="oncallPressed"
-        tools:layout_editor_absoluteX="121dp"
-        tools:layout_editor_absoluteY="249dp"
-        android:layout_marginBottom="18dp"
         android:layout_above="@+id/reservation_info"
-        android:layout_alignEnd="@+id/reservation_info" />
+        android:layout_alignEnd="@+id/reservation_info"
+        android:layout_marginBottom="18dp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:onClick="oncallPressed"
+        android:text="Call Front Desk"
+        tools:layout_editor_absoluteX="121dp"
+        tools:layout_editor_absoluteY="249dp" />
 
     <Button
         android:id="@+id/reservation_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/hotel_other"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="26dp"
+        android:backgroundTint="@color/colorPrimaryDark"
         android:onClick="onResInfoPressed"
         android:text="Reservation Info"
         tools:layout_editor_absoluteX="117dp"
-        tools:layout_editor_absoluteY="324dp"
-        android:layout_marginBottom="26dp"
-        android:layout_above="@+id/hotel_other"
-        android:layout_centerHorizontal="true" />
+        tools:layout_editor_absoluteY="324dp" />
 
     <Button
         android:id="@+id/hotel_other"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/check_out"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="26dp"
+        android:backgroundTint="@color/colorPrimaryDark"
         android:onClick="onServicesPressed"
         android:text="Hotel Services and Amenities"
         tools:layout_editor_absoluteX="80dp"
-        tools:layout_editor_absoluteY="391dp"
-        android:layout_marginBottom="26dp"
-        android:layout_above="@+id/check_out"
-        android:layout_centerHorizontal="true" />
+        tools:layout_editor_absoluteY="391dp" />
 
     <ImageView
         android:id="@+id/imageView"
