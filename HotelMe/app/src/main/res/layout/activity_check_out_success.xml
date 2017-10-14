@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="gatech.hotelme.Controller.SuccessCheckInActivity">
-
+    tools:context="gatech.hotelme.Controller.CheckOutSuccess">
     <TextView
         android:id="@+id/success_text"
         android:layout_width="wrap_content"
@@ -20,7 +19,8 @@
         android:id="@+id/success_text2"
         android:layout_width="294dp"
         android:layout_height="36dp"
-        android:text="You have successfully checked in to your hotel"
+        android:text="You have successfully checked out to your hotel"
+        android:textAlignment="center"
         tools:layout_editor_absoluteX="45dp"
         tools:layout_editor_absoluteY="134dp" />
 
@@ -31,21 +31,5 @@
         app:srcCompat="@mipmap/ic_launcher"
         tools:layout_editor_absoluteX="106dp"
         tools:layout_editor_absoluteY="185dp" />
-
-    <Button
-        android:id="@+id/go_to_hotel_key_screen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="GET DIGITAL ROOM KEY"
-        tools:layout_editor_absoluteX="103dp"
-        tools:layout_editor_absoluteY="428dp" />
-
-    <Button
-        android:id="@+id/home_page"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Home Page"
-        tools:layout_editor_absoluteX="141dp"
-        tools:layout_editor_absoluteY="362dp" />
 
 </android.support.constraint.ConstraintLayout>
