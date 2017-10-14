@@ -125,6 +125,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Open"
+        android:textStyle="bold"
         tools:layout_editor_absoluteX="179dp"
         tools:layout_editor_absoluteY="338dp" />
 
@@ -133,6 +134,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Close"
+        android:textStyle="bold"
         tools:layout_editor_absoluteX="270dp"
         tools:layout_editor_absoluteY="338dp" />
 </android.support.constraint.ConstraintLayout>
