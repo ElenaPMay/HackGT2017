@@ -45,24 +45,26 @@
         android:id="@+id/go_to_hotel_key_screen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="GET DIGITAL ROOM KEY"
-        android:onClick="onGetKeyPressed"
-        tools:layout_editor_absoluteX="103dp"
-        tools:layout_editor_absoluteY="428dp"
-        android:layout_below="@+id/imageButton2"
         android:layout_alignStart="@+id/imageButton2"
-        android:layout_marginTop="29dp" />
+        android:layout_below="@+id/imageButton2"
+        android:layout_marginTop="29dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:onClick="onGetKeyPressed"
+        android:text="GET DIGITAL ROOM KEY"
+        tools:layout_editor_absoluteX="103dp"
+        tools:layout_editor_absoluteY="428dp" />
 
     <Button
         android:id="@+id/home_page"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Home Page"
-        android:onClick="onHomePressed"
-        tools:layout_editor_absoluteX="141dp"
-        tools:layout_editor_absoluteY="362dp"
-        android:layout_marginTop="19dp"
         android:layout_below="@+id/go_to_hotel_key_screen"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="19dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:onClick="onHomePressed"
+        android:text="Home Page"
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="362dp" />
 
 </RelativeLayout>

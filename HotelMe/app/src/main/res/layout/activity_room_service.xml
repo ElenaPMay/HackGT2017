@@ -10,13 +10,14 @@
         android:id="@+id/complete_order"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="21dp"
+        android:backgroundTint="@color/colorPrimary"
         android:onClick="onSumbitOrderPressed"
         android:text="Submit Order"
         tools:layout_editor_absoluteX="136dp"
-        tools:layout_editor_absoluteY="447dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="21dp" />
+        tools:layout_editor_absoluteY="447dp" />
 
     <ListView
         android:id="@+id/menu"
