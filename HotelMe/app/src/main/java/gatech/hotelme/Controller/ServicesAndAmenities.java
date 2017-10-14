@@ -17,11 +17,9 @@ public class ServicesAndAmenities extends AppCompatActivity {
 
     public void onRoomServicePressed(View view) {
         startActivity(new Intent(getBaseContext(), RoomServiceActivity.class));
-        finish();
     }
 
     public void onHotelInfoPressed(View view) {
         startActivity(new Intent(getBaseContext(), HotelInfoActivity.class));
-        finish();
     }
 }

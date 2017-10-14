@@ -17,6 +17,5 @@ public class CheckOutActivity extends AppCompatActivity {
 
     public void onCompleteCheckoutPressed(View view) {
         startActivity(new Intent(getBaseContext(),CheckOutSuccess.class));
-        finish();
     }
 }

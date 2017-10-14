@@ -18,6 +18,5 @@ public class CheckInActivity extends AppCompatActivity {
 
     public void onCheckInPressed(View view) {
         startActivity(new Intent(getBaseContext(),SuccessCheckInActivity.class));
-        finish();
     }
 }
