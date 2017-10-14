@@ -20,7 +20,7 @@
         android:id="@+id/imageView2"
         android:layout_width="379dp"
         android:layout_height="149dp"
-        app:srcCompat="@mipmap/ic_launcher"
+        android:background="@drawable/warning"
         tools:layout_editor_absoluteX="2dp"
         tools:layout_editor_absoluteY="1dp" />
 
