@@ -37,36 +37,30 @@
     android:text="Check out date"
     tools:layout_editor_absoluteX="16dp"
     tools:layout_editor_absoluteY="235dp"
-    android:layout_centerVertical="true"
-    android:layout_alignEnd="@+id/check_in_date_text" />
+    android:layout_below="@+id/check_in_date_text"
+    android:layout_alignStart="@+id/check_in_date_text"
+    android:layout_marginTop="10dp"/>
 
 <TextView
     android:id="@+id/check_in_date_text"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="Check In Date: "
+    android:layout_marginTop="34dp"
     android:layout_below="@+id/hotelName"
-    android:layout_toStartOf="@+id/hotelName"
-    android:layout_marginTop="34dp" />
+    android:layout_alignParentStart="true"
+    android:layout_marginStart="14dp"/>
 
-<EditText
-    android:id="@+id/check_in_date"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_alignBottom="@+id/check_in_date_text"
-    android:layout_marginStart="25dp"
-    android:layout_toEndOf="@+id/check_in_date_text"
-    android:ems="10"
-    android:inputType="date" />
-
-<EditText
-    android:id="@+id/check_out_date"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_alignEnd="@+id/check_in_date"
-    android:layout_centerVertical="true"
-    android:ems="10"
-    android:inputType="date" />
+    <TextView
+        android:id="@+id/check_out_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="date"
+        android:layout_alignBaseline="@+id/check_out_date_text"
+        android:layout_alignBottom="@+id/check_out_date_text"
+        android:layout_toEndOf="@+id/check_out_time_text"
+        android:layout_marginStart="21dp"/>
 
 <TextView
     android:id="@+id/room_info_text"
@@ -95,21 +89,14 @@
     android:layout_alignStart="@+id/check_in_time_text"
     android:layout_marginTop="18dp" />
 
-<TextView
-    android:id="@+id/reservation_number"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_alignBottom="@+id/res_num"
-    android:layout_alignEnd="@+id/room_info"
-    android:layout_alignStart="@+id/checkInButton" />
-
-<TextView
+    <TextView
     android:id="@+id/check_in_time_text"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="Check In time: "
-    android:layout_below="@+id/check_out_date"
-    android:layout_alignStart="@+id/check_out_time_text" />
+    android:layout_below="@+id/check_out_date_text"
+    android:layout_alignEnd="@+id/check_out_date_text"
+    android:layout_marginTop="19dp"/>
 
 <TextView
     android:id="@+id/check_out_time_text"
@@ -136,5 +123,22 @@
     android:layout_alignEnd="@+id/room_info"
     android:layout_alignStart="@+id/check_in_time"
     android:layout_alignTop="@+id/check_out_time_text" />
+
+    <TextView
+        android:id="@+id/check_in_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/check_in_date_text"
+        android:layout_alignBottom="@+id/check_in_date_text"
+        android:layout_alignEnd="@+id/check_out_date"
+        android:layout_alignStart="@+id/check_out_date"/>
+
+    <TextView
+        android:id="@+id/reservation_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/room_info"
+        android:layout_alignTop="@+id/res_num"
+        android:layout_toEndOf="@+id/res_num"/>
 
 </RelativeLayout>

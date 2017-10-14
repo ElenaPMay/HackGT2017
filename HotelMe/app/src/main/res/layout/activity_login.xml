@@ -34,12 +34,12 @@
         android:id="@+id/reg_code"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/login_button"
+        android:layout_alignEnd="@+id/welcome_text"
         android:layout_marginBottom="41dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Registration Code"
-        android:layout_above="@+id/login_button"
-        android:layout_alignEnd="@+id/welcome_text" />
+        android:hint="registration code "
+        android:inputType="textPersonName"/>
 
     <TextView
         android:id="@+id/welcome_text"
