@@ -16,7 +16,7 @@
         tools:layout_editor_absoluteY="183dp"
         android:layout_above="@+id/room_service"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="23dp" />
+        android:layout_marginBottom="16dp" />
 
     <ImageButton
         android:id="@+id/imageButton3"
@@ -36,9 +36,8 @@
         android:text="Room Service"
         tools:layout_editor_absoluteX="131dp"
         tools:layout_editor_absoluteY="251dp"
-        android:layout_marginBottom="26dp"
         android:layout_above="@+id/cleaning_service"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignEnd="@+id/search_google_maps" />
 
     <Button
         android:id="@+id/cleaning_service"
@@ -47,9 +46,9 @@
         android:text="Cleaning Service"
         tools:layout_editor_absoluteX="117dp"
         tools:layout_editor_absoluteY="323dp"
-        android:layout_marginBottom="22dp"
+        android:layout_marginBottom="13dp"
         android:layout_above="@+id/hotel_resturant"
-        android:layout_alignEnd="@+id/hotel_resturant" />
+        android:layout_alignStart="@+id/hotel_resturant" />
 
     <Button
         android:id="@+id/hotel_resturant"
@@ -58,7 +57,17 @@
         android:text="hotel resturant"
         tools:layout_editor_absoluteX="116dp"
         tools:layout_editor_absoluteY="394dp"
-        android:layout_marginBottom="66dp"
+        android:layout_above="@+id/search_google_maps"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="13dp" />
+
+    <Button
+        android:id="@+id/search_google_maps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Google maps"
+        android:onClick="onGoogleMapsPressed"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="33dp" />
 </RelativeLayout>

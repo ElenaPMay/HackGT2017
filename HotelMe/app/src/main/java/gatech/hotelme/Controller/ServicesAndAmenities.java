@@ -22,4 +22,8 @@ public class ServicesAndAmenities extends AppCompatActivity {
     public void onHotelInfoPressed(View view) {
         startActivity(new Intent(getBaseContext(), HotelInfoActivity.class));
     }
+
+    public void onGoogleMapsPressed(View view) {
+        startActivity(new Intent(getBaseContext(), MapsActivity.class));
+    }
 }
