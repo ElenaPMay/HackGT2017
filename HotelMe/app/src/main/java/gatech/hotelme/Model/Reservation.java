@@ -108,4 +108,8 @@ class Reservation {
     void set_room(Room _room) {
         this._room = _room;
     }
+
+    void set_checkedIn(boolean checkedIn) {
+        _checkedIn = checkedIn;
+    }
 }

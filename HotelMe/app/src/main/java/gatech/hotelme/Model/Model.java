@@ -102,4 +102,8 @@ public class Model {
     public void addHotel(String hotelID, String name) {
         _hotelManager.addHotel(hotelID, name);
     }
+
+    public void set_checkedIn(boolean checkedIn) {
+        _reservationManager.set_checkedIn(checkedIn);
+    }
 }

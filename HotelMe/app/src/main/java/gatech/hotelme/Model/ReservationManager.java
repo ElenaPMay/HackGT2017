@@ -173,4 +173,8 @@ class ReservationManager {
         return _reservations.keySet().contains(Integer.valueOf(_loginID)) ?
                 0 : 1;
     }
+
+    void set_checkedIn(boolean checkedIn) {
+        _currentReservation.set_checkedIn(checkedIn);
+    }
 }
