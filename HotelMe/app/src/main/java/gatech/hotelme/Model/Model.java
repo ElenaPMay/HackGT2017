@@ -33,7 +33,7 @@ public class Model {
         return _reservationManager.get_creditCardNum();
     }
 
-    public int get_bill() {
+    public double get_bill() {
         return _reservationManager.get_bill();
     }
 
@@ -83,5 +83,9 @@ public class Model {
 
     public int login(String _loginID) {
         return 0;
+    }
+
+    public boolean isCheckedIn() {
+        return false;
     }
 }

@@ -14,6 +14,7 @@ class Reservation {
     private Hotel _hotel;
     private String _hotelID;
     private Room _room;
+    private boolean _checkedIn;
 
     Reservation() {
 
@@ -68,6 +69,10 @@ class Reservation {
 
     Room get_room() {
         return _room;
+    }
+
+    boolean is_checkedIn() {
+        return _checkedIn;
     }
 
     void set_loginID(int _loginID) {

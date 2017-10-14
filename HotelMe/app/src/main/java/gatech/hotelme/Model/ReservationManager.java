@@ -60,7 +60,7 @@ class ReservationManager {
         return _currentReservation.get_ownerCreditCardNumber();
     }
 
-    int get_bill() {
+    double get_bill() {
         return _currentReservation.get_ownerBillAmount();
     }
 
@@ -78,6 +78,10 @@ class ReservationManager {
 
     Room get_room() {
         return _currentReservation.get_room();
+    }
+
+    boolean is_checkedIn() {
+        return _currentReservation.is_checkedIn();
     }
 
     void set_ownerFirstName(String _ownerFirstName) {
