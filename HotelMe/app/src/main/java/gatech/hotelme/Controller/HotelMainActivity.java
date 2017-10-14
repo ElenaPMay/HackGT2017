@@ -19,4 +19,6 @@ public class HotelMainActivity extends AppCompatActivity {
         startActivity(new Intent(getBaseContext(),HotelKeyActivity.class));
         finish();
     }
+
+
 }

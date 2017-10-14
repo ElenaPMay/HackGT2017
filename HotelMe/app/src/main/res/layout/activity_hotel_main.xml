@@ -27,6 +27,7 @@
         android:id="@+id/reservation_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="onResInfoPressedPressed"
         android:text="Reservation Info"
         tools:layout_editor_absoluteX="117dp"
         tools:layout_editor_absoluteY="324dp" />
@@ -35,6 +36,7 @@
         android:id="@+id/hotel_other"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="onServicesPressed"
         android:text="Hotel Services and Amenities"
         tools:layout_editor_absoluteX="80dp"
         tools:layout_editor_absoluteY="391dp" />
@@ -52,6 +54,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="check out"
+        android:onClick="onCheckOutPressed"
         android:visibility="invisible"
         tools:layout_editor_absoluteX="147dp"
         tools:layout_editor_absoluteY="458dp" />
