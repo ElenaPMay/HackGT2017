@@ -43,4 +43,12 @@ class Hotel {
     void set_name(String _name) {
         this._name = _name;
     }
+
+    public void set_rooms(List<Reservation> _rooms) {
+        this._rooms = _rooms;
+    }
+
+    public void set_reservations(List<Reservation> _reservations) {
+        this._reservations = _reservations;
+    }
 }

@@ -1,14 +1,27 @@
 package gatech.hotelme.Model;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 class HotelManager {
     private static final HotelManager _instance = new
             HotelManager();
     private static Hotel _currentHotel;
+    private static Map<String, Hotel> _hotels;
+    private static DatabaseReference _databaseRef = FirebaseDatabase
+            .getInstance().getReference();
+    private static DatabaseReference _testDatabse = _databaseRef.child("test");
+
 
     private HotelManager() {
-
+        _hotels = new HashMap<>();
     }
 
     static HotelManager getInstance() {
