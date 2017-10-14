@@ -37,6 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="GET DIGITAL ROOM KEY"
+        android:onClick="onGetKeyPressed"
         tools:layout_editor_absoluteX="103dp"
         tools:layout_editor_absoluteY="428dp" />
 
@@ -45,6 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Home Page"
+        android:onClick="onHomePressed"
         tools:layout_editor_absoluteX="141dp"
         tools:layout_editor_absoluteY="362dp" />
 

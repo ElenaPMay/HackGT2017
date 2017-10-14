@@ -13,7 +13,7 @@ public class Model {
 
     }
 
-    public Model getInstance() {
+    public static Model getInstance() {
         return instance;
     }
 
