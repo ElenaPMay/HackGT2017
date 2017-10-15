@@ -6,50 +6,62 @@
     android:layout_height="match_parent"
     tools:context="gatech.hotelme.Controller.CheckOutActivity">
 
-    <TextView
-        android:id="@+id/check_out_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Are you sure you want to check out?"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="49dp"
-        tools:layout_editor_absoluteY="166dp"
-        android:layout_below="@+id/imageView2"
-        android:layout_centerHorizontal="true" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="379dp"
-        android:layout_height="149dp"
-        android:background="@drawable/warning"
-        tools:layout_editor_absoluteX="2dp"
-        tools:layout_editor_absoluteY="1dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true" />
-
-    <TextView
-        android:id="@+id/check_out_text2"
-        android:layout_width="327dp"
-        android:layout_height="31dp"
-        android:text="By completing checkout you're room key will no longer be vaild"
-        android:textAlignment="center"
-        tools:layout_editor_absoluteX="29dp"
-        tools:layout_editor_absoluteY="203dp"
-        android:layout_marginTop="13dp"
-        android:layout_below="@+id/check_out_text"
-        android:layout_centerHorizontal="true" />
-
     <Button
         android:id="@+id/complete_check_out"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/check_out_text2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="53dp"
+        android:layout_marginBottom="19dp"
         android:backgroundTint="@color/colorPrimaryDark"
+        android:fontFamily="sans-serif-condensed"
         android:onClick="onCompleteCheckOutPressed"
         android:text="Complete Check out"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
         tools:layout_editor_absoluteX="104dp"
-        tools:layout_editor_absoluteY="309dp" />
+        tools:layout_editor_absoluteY="309dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:scaleType="fitXY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/black_background"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="WARNING"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srcCompat="@drawable/risk"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/complete_check_out"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="75dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="By completing checkout you're room key will no longer be valid"
+        android:textAlignment="center"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 </RelativeLayout>
