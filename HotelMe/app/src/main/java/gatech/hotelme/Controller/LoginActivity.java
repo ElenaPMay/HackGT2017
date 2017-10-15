@@ -29,7 +29,10 @@ public class LoginActivity extends AppCompatActivity {
             if (_model.isCheckedIn()) {
                 startActivity(new Intent(getBaseContext(),HotelMainActivity.class));
             } else {
-                startActivity(new Intent(getBaseContext(), CheckInActivity.class));
+                Intent intent = new Intent(getBaseContext(), CheckInActivity
+                        .class);
+                intent.putExtra("flag", true);
+                startActivity(intent);
             }
         } else {
             Toast.makeText(getApplicationContext(), "Incorrect Login ID",
