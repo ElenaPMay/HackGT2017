@@ -7,17 +7,6 @@
     android:layout_height="match_parent"
     tools:context="gatech.hotelme.Controller.LoginActivity">
 
-    <ImageView
-        android:id="@+id/login_screen_pic"
-        android:layout_width="367dp"
-        android:layout_height="141dp"
-        android:background="@drawable/hotels"
-        tools:layout_editor_absoluteX="9dp"
-        tools:layout_editor_absoluteY="16dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
-
     <Button
         android:id="@+id/login_button"
         android:layout_width="wrap_content"
@@ -26,8 +15,10 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="151dp"
         android:backgroundTint="@color/colorPrimaryDark"
+        android:fontFamily="sans-serif-condensed"
         android:onClick="onLoginPressed"
         android:text="Login"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
         tools:layout_editor_absoluteX="148dp"
         tools:layout_editor_absoluteY="218dp" />
 
@@ -35,22 +26,47 @@
         android:id="@+id/reg_code"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/login_button"
-        android:layout_alignEnd="@+id/welcome_text"
-        android:layout_marginBottom="41dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:ems="10"
+        android:fontFamily="sans-serif-condensed"
         android:hint="registration code "
-        android:inputType="textPersonName"/>
+        android:inputType="textPersonName"
+        android:textColor="@color/common_google_signin_btn_text_dark_default" />
 
-    <TextView
-        android:id="@+id/welcome_text"
+    <ImageView
+        android:id="@+id/imageView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="43dp"
-        android:text="Welcome to HotelMe!"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_below="@+id/login_screen_pic"
-        android:layout_centerHorizontal="true" />
+        app:srcCompat="@drawable/black_background"
+        android:scaleType="fitXY"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="71dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Welcome to HotelMe"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Enter registration code to begin."
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:layout_above="@+id/reg_code"
+        android:layout_centerHorizontal="true" />;
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

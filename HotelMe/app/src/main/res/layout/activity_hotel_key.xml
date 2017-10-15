@@ -76,8 +76,10 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="26dp"
         android:backgroundTint="@color/colorPrimaryDark"
+        android:fontFamily="sans-serif-condensed"
         android:onClick="onHomePressed"
         android:text="Home"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
         tools:layout_editor_absoluteX="171dp"
         tools:layout_editor_absoluteY="463dp" />
 </RelativeLayout>
