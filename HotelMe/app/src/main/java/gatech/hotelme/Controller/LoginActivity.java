@@ -26,8 +26,8 @@ public class LoginActivity extends AppCompatActivity {
         int validLogin = _model.login(logID);
 
         if (validLogin == 0) {
-            if (!_model.isCheckedIn()) {
-                startActivity(new Intent(getBaseContext(),CheckInActivity.class));
+            if (_model.isCheckedIn()) {
+                startActivity(new Intent(getBaseContext(),HotelMainActivity.class));
             } else {
                 startActivity(new Intent(getBaseContext(), CheckInActivity.class));
             }
