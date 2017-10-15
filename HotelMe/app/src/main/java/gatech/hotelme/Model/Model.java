@@ -7,7 +7,7 @@ import java.util.Date;
 public class Model {
     private static final Model instance = new Model();
     private static final DateFormat _formatter = new SimpleDateFormat
-            ("MM/dd/yyyy");
+            ("MM/dd/yy");
     private final ReservationManager _reservationManager;
     private final HotelManager _hotelManager;
 
@@ -52,7 +52,7 @@ public class Model {
 
     public String get_checkInDate() {
         Date dateFormat =  _reservationManager.get_checkInDate();
-        String dateString = _formatter.format(dateFormat);
+        String dateString = _formatter.format(dateFormat).trim();
         return dateString;
     }
 

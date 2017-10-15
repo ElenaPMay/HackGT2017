@@ -36,12 +36,10 @@ public class CheckInActivity extends AppCompatActivity {
         _hotelName.setText(_model.get_hotel_name());
 
         _checkInDate = (TextView) findViewById(R.id.check_in_date_text);
-        _checkInDate.setText(_checkInDate.getText().toString() + "     " +
-                _model
-                .get_checkInDate());
+        _checkInDate.setText(_checkInDate.getText().toString().trim() + _model.get_checkInDate().trim());
 
         _checkOutDate = (TextView) findViewById(R.id.check_out_date_text);
-        _checkOutDate.setText(_checkOutDate.getText().toString() + "     " + _model
+        _checkOutDate.setText(_checkOutDate.getText().toString() + "\n" + _model
                 .get_checkOutDate());
 
         _roomInfo = (TextView) findViewById(R.id.room_info_text);
