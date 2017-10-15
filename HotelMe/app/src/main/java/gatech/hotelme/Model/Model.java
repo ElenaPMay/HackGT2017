@@ -69,8 +69,8 @@ public class Model {
         return num;
     }
 
-    public Room get_room() {
-        return _reservationManager.get_room();
+    public String get_room_num() {
+        return String.valueOf(_reservationManager.get_room_num());
     }
 
     public void set_ownerFirstName(String _ownerFirstName) {
