@@ -18,23 +18,23 @@
         tools:layout_editor_absoluteX="122dp"
         tools:layout_editor_absoluteY="177dp"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"/>
 
     <Button
         android:id="@+id/call_service"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/reservation_info"
+        android:layout_alignBottom="@+id/reservation_info"
+        android:layout_marginEnd="30dp"
+        android:layout_toStartOf="@+id/reservation_info"
         android:backgroundTint="@color/colorPrimaryDark"
         android:fontFamily="sans-serif-condensed"
         android:onClick="oncallPressed"
-        android:text="Call Front Desk"
+        android:text=" Call Front Desk "
         android:textColor="@color/common_google_signin_btn_text_dark_default"
         tools:layout_editor_absoluteX="121dp"
-        tools:layout_editor_absoluteY="249dp"
-        android:layout_alignBaseline="@+id/reservation_info"
-        android:layout_alignBottom="@+id/reservation_info"
-        android:layout_toStartOf="@+id/reservation_info"
-        android:layout_marginEnd="30dp" />
+        tools:layout_editor_absoluteY="249dp"/>
 
     <Button
         android:id="@+id/reservation_info"
@@ -87,15 +87,18 @@
         android:layout_height="wrap_content"
         android:scaleType="fitXY"
         app:srcCompat="@drawable/black_background"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"/>
 
     <ImageView
         android:id="@+id/imageView9"
+        android:scaleType="fitXY"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fadingEdge="none"
         app:srcCompat="@drawable/marriott"
-        android:layout_marginBottom="65dp"
+        android:layout_marginBottom="64dp"
         android:layout_above="@+id/room_key"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"/>
 </RelativeLayout>

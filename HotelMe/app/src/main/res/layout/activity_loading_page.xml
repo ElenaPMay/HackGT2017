@@ -8,6 +8,7 @@
 
     <ImageView
         android:id="@+id/imageView7"
+        android:alpha="5"
         android:layout_width="550dp"
         android:layout_height="984dp"
         app:srcCompat="@drawable/plane"
@@ -20,11 +21,11 @@
         android:layout_height="62dp"
         android:text="hotelme"
         android:textAlignment="textEnd"
-        android:textColor="@color/simple"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
         android:textSize="@android:dimen/notification_large_icon_width"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="71dp"
-        tools:layout_editor_absoluteY="424dp" />
+        tools:layout_editor_absoluteY="424dp"/>
 
     <TextView
         android:id="@+id/textView9"

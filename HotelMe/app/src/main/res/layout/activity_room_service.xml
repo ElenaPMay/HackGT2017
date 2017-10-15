@@ -25,11 +25,11 @@
         android:layout_marginBottom="21dp"
         android:backgroundTint="@color/colorPrimaryDark"
         android:fontFamily="sans-serif-condensed"
-        android:onClick="onSumbitOrderPressed"
+        android:onClick="onSubmitOrderPressed"
         android:text="Submit Order"
         android:textColor="@color/common_google_signin_btn_text_dark_default"
         tools:layout_editor_absoluteX="136dp"
-        tools:layout_editor_absoluteY="447dp" />
+        tools:layout_editor_absoluteY="447dp"/>
 
     <ImageView
         android:id="@+id/imageView10"

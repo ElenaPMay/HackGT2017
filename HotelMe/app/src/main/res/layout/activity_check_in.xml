@@ -5,7 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="gatech.hotelme.Controller.CheckInActivity">
-
+    <ImageView
+        android:id="@+id/imageView4"
+        android:scaleType="fitXY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/black_background"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"/>
     <Button
         android:id="@+id/checkInButton"
         android:layout_width="wrap_content"
@@ -33,14 +40,17 @@
         android:id="@+id/hotel_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/imageButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif-condensed"
         android:text="hotel name here"
+        android:textAllCaps="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
         android:textSize="24sp"
         tools:layout_editor_absoluteX="106dp"
-        tools:layout_editor_absoluteY="144dp"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/imageButton"
-        android:layout_centerHorizontal="true" />
+        tools:layout_editor_absoluteY="144dp"/>
 
     <TextView
         android:id="@+id/check_out_date_text"
@@ -48,7 +58,9 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/check_in_date_text"
         android:layout_centerVertical="true"
+        android:fontFamily="sans-serif-condensed"
         android:text="Check out date"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="235dp"/>
 
@@ -56,28 +68,33 @@
         android:id="@+id/check_in_date_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Check In Date: "
         android:layout_below="@+id/hotel_name"
+        android:layout_marginTop="34dp"
         android:layout_toStartOf="@+id/hotel_name"
-        android:layout_marginTop="34dp" />
+        android:text="Check In Date: "
+        android:textColor="@color/common_google_signin_btn_text_dark_default"/>
 
     <TextView
         android:id="@+id/room_info_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Room Info:"
-        android:layout_below="@+id/check_out_time_text"
         android:layout_alignStart="@+id/check_out_time_text"
-        android:layout_marginTop="18dp"/>
+        android:layout_below="@+id/check_out_time_text"
+        android:layout_marginTop="18dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Room Info:"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"/>
 
     <TextView
         android:id="@+id/res_num"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Reservation Number:"
-        android:layout_below="@+id/room_info_text"
         android:layout_alignStart="@+id/room_info_text"
-        android:layout_marginTop="13dp"/>
+        android:layout_below="@+id/room_info_text"
+        android:layout_marginTop="13dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Reservation Number:"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"/>
 
     <TextView
         android:id="@+id/check_in_time_text"
@@ -86,16 +103,20 @@
         android:layout_alignStart="@+id/check_out_date_text"
         android:layout_below="@+id/check_out_date_text"
         android:layout_marginTop="20dp"
-        android:text="Check in time:" />
+        android:fontFamily="sans-serif-condensed"
+        android:text="Check in time:"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"/>
 
     <TextView
         android:id="@+id/check_out_time_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Check out time:"
-        android:layout_below="@+id/check_in_time_text"
         android:layout_alignStart="@+id/check_in_time_text"
-        android:layout_marginTop="18dp"/>
+        android:layout_below="@+id/check_in_time_text"
+        android:layout_marginTop="18dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Check out time:"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"/>
 
     <TextView
         android:id="@+id/check_out_time"
@@ -113,5 +134,7 @@
         android:layout_below="@+id/checkInButton"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp" />
+
+
 
 </RelativeLayout>
