@@ -37,6 +37,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
+        android:fontFamily="sans-serif-condensed"
         android:text="WARNING"
         android:textColor="@color/common_google_signin_btn_text_dark_default"
         android:textSize="36sp"
@@ -47,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:srcCompat="@drawable/risk"
-        android:layout_centerVertical="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" />
 
     <TextView
@@ -57,6 +58,7 @@
         android:layout_alignBottom="@+id/complete_check_out"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="75dp"
+        android:fontFamily="sans-serif-condensed"
         android:text="By completing checkout you're room key will no longer be valid"
         android:textAlignment="center"
         android:textColor="@color/common_google_signin_btn_text_dark_default"
