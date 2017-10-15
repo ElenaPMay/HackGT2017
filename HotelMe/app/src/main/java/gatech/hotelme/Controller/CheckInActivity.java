@@ -33,6 +33,9 @@ public class CheckInActivity extends AppCompatActivity {
         _checkOutDate.setText(_checkOutDate.getText().toString() + "     " + _model
                 .get_checkOutDate());
 
+        _roomInfo = (TextView) findViewById(R.id.room_info_text);
+        _roomInfo.setText(_roomInfo.getText() + "      " + _model.get_room_num());
+
         _reservationNumber = (TextView) findViewById(R.id.res_num);
         _reservationNumber.setText(_reservationNumber.getText().toString() + "     " +
                 _model
