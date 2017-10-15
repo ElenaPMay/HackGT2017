@@ -58,9 +58,6 @@ class HotelManager {
         return _currentHotel.get_name();
     }
 
-    List<Room> get_rooms() {
-        return _currentHotel.get_rooms();
-    }
 
     List<Reservation> get_reservations() {
         return _currentHotel.get_reservations();
@@ -74,17 +71,6 @@ class HotelManager {
 
     Hotel getHotel(String name) {
         return _hotels.get(name);
-    }
-
-    Room getRoom(String hotelName, String roomType, String roomNum) {
-        List<Room> rooms = getHotel(hotelName).get_rooms();
-        for (Room room: rooms) {
-            if (room.get_roomType().toString().equals(roomType) && String
-                    .valueOf(room.get_roomNumber()).equals(roomNum)) {
-                return room;
-            }
-        }
-        return null;
     }
 
     void addHotel(String hotelID, String name) {
@@ -104,5 +90,9 @@ class HotelManager {
                 }
             }
         }
+    }
+
+    void addReservation(String hotelID, Reservation reservation) {
+        _hotels.get(hotelID).addReservation(reservation);
     }
 }

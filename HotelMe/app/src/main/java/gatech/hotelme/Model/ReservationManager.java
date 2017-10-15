@@ -41,9 +41,56 @@ class ReservationManager {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot snap : dataSnapshot.getChildren()) {
-                    System.out.println("HEREREREREKFJKDJFKDJKAFJKAJF");
-                    Reservation reservation = snap.getValue(Reservation.class);
-                    addReservation(reservation);
+                    String _loginID = String.valueOf(snap.child("_loginID")
+                            .getValue());
+                    String _ownerFirstName = (String)snap.child
+                            ("_ownerFirstName").getValue();
+                    String _ownerLastName = (String) snap.child
+                            ("_ownerLastName").getValue();
+                    String _creditCardNumber = String.valueOf(snap
+                            .child("_ownerCreditCardNumber").getValue());
+                    String _billAmount = String.valueOf(snap.child
+                            ("_ownerBillAmount").getValue());
+                    String month = String.valueOf(snap.child("_checkInDate")
+                            .child("month").getValue());
+                    if (month.length() == 1) {
+                        month = "0" + month;
+                    }
+                    String day = String.valueOf(snap.child("_checkInDate")
+                            .child("day").getValue());
+                    if (day.length() == 1) {
+                        day = "0" + day;
+                    }
+                    String year = String.valueOf(snap.child("_checkInDate")
+                            .child("year").getValue());
+                    while (year.length() < 4) {
+                        year = "0" + year;
+                    }
+                    String _checkIn =  month + "/" + day + "/" + year;
+                    month = String.valueOf(snap.child("_checkOutDate")
+                            .child("month").getValue());
+                    if (month.length() == 1) {
+                        month = "0" + month;
+                    }
+                    day = String.valueOf(snap.child("_checkOutDate")
+                            .child("day").getValue());
+                    if (day.length() == 1) {
+                        day = "0" + day;
+                    }
+                    year = String.valueOf(snap.child("_checkOutDate")
+                            .child("year").getValue());
+                    while (year.length() < 4) {
+                        year = "0" + year;
+                    }
+                    String _checkOut =  month + "/" + day + "/" + year;;
+                    String _hotel = (String) snap.child("_hotelID").getValue();
+                    String _roomType = (String) snap.child("_room").child(
+                            "_roomType").getValue();
+                    String _roomNumber = String.valueOf(snap.child("_room").child(
+                            "_roomNumber").getValue());
+                    addReservation(parse_string(_loginID, _ownerFirstName,
+                            _ownerLastName, _creditCardNumber, _billAmount,
+                            _checkIn, _checkOut, _hotel, _roomType, _roomNumber));
                 }
             }
 
@@ -54,12 +101,13 @@ class ReservationManager {
         });
     }
 
-    static void set_currentReservation(String ownerFirstName, String
-            ownerLastName, String stringCreditCardNum, String stringBill,
+    private static Reservation parse_string(String loginID, String
+            ownerFirstName, String ownerLastName, String stringCreditCardNum, String stringBill,
             String stringCheckInDate, String stringCheckOutDate, String
             stringHotel, String roomType, String roomNum) {
+        int _loginID = Integer.valueOf(loginID);
         int creditCardNum = Integer.valueOf(stringCreditCardNum);
-        int bill = Integer.valueOf(stringBill);
+        double bill = Double.valueOf(stringBill);
         Date checkInDate =  null;
         Date checkOutDate = null;
         try {
@@ -69,11 +117,21 @@ class ReservationManager {
             e.printStackTrace();
             System.exit(0);
         }
-        Hotel hotel = _hotelManager.getHotel(stringHotel);
-        Room room = _hotelManager.getRoom(stringHotel, roomType, roomNum);
-        ReservationManager._currentReservation = new Reservation
-                (ownerFirstName, ownerLastName, creditCardNum, bill,
-                checkInDate, checkOutDate, hotel, room);
+        Room room = new Room(RoomType.valueOf(roomType), Integer.valueOf(roomNum));
+        return new Reservation(_loginID, ownerFirstName, ownerLastName,
+                creditCardNum, bill, checkInDate, checkOutDate, stringHotel, room);
+    }
+
+    static void set_currentReservation(String loginID, String ownerFirstName,
+                                       String
+            ownerLastName, String stringCreditCardNum, String stringBill,
+            String stringCheckInDate, String stringCheckOutDate, String
+            stringHotel, String roomType, String roomNum) {
+        ReservationManager._currentReservation = parse_string
+                (loginID, ownerFirstName,
+                ownerLastName, stringCreditCardNum, stringBill,
+                stringCheckInDate, stringCheckOutDate, stringHotel, roomType,
+                roomNum);
     }
 
     int get_loginNum() {
@@ -102,10 +160,6 @@ class ReservationManager {
 
     Date get_checkOutDate() {
         return _currentReservation.get_checkOutDate();
-    }
-
-    Hotel get_hotel() {
-        return _currentReservation.get_hotel();
     }
 
     Room get_room() {
@@ -151,15 +205,19 @@ class ReservationManager {
         _currentReservation.set_checkOutDate(_checkOutDate);
     }
 
-    void set_hotel(String _stringHotel) {
-        Hotel _hotel = _hotelManager.getHotel(_stringHotel);
-        _currentReservation.set_hotel(_hotel);
+    void set_room(String _roomType, String _roomNum) {
+        Room _room = new Room(RoomType.valueOf(_roomType), Integer.valueOf
+                (_roomNum));
+        _currentReservation.set_room(_room);
     }
 
-    void set_room(String _roomType, String _roomNum) {
-        Room _room = _hotelManager.getRoom(_currentReservation.get_hotel()
-                        .get_name(), _roomType, _roomNum);
-        _currentReservation.set_room(_room);
+    void addReservation(String loginID, String ownerFirstName, String
+            ownerLastName, String stringCreditCardNum, String stringBill,
+            String stringCheckInDate, String stringCheckOutDate, String
+            stringHotel, String roomType, String roomNum) {
+        addReservation(parse_string(loginID, ownerFirstName, ownerLastName,
+                stringCreditCardNum, stringBill, stringCheckInDate,
+                stringCheckOutDate, stringHotel, roomType, roomNum));
     }
 
     void addReservation(Reservation reservation) {
@@ -186,5 +244,9 @@ class ReservationManager {
 
     void set_checkedIn(boolean checkedIn) {
         _currentReservation.set_checkedIn(checkedIn);
+    }
+
+    String get_hotelName() {
+        return _hotelManager.get_name();
     }
 }

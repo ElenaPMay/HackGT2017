@@ -14,10 +14,12 @@ public class Model {
     }
 
     private void setUp() {
+        _hotelManager.addHotel("hotelid", "Marriott");
+        _reservationManager.addReservation("12392", "first", "last",
+                "23234329", "23.0",
+                "10/03/2017", "10/04/2017", "hotelid", "QUEEN", "17");
         _reservationManager.setUp();
         _hotelManager.setUp();
-        _hotelManager.addHotel("hotelid", "hotelnam");
-        _reservationManager.addReservation(new Reservation());
     }
 
     public static Model getInstance() {
@@ -52,9 +54,10 @@ public class Model {
         return _reservationManager.get_checkOutDate();
     }
 
-    public Hotel get_hotel() {
-        return _reservationManager.get_hotel();
+    public String get_hotel_name() {
+        return _hotelManager.get_name();
     }
+
 
     public Room get_room() {
         return _reservationManager.get_room();
@@ -78,10 +81,6 @@ public class Model {
 
     public void set_checkOutDate(String _stringCheckOutDate) {
         _reservationManager.set_checkOutDate(_stringCheckOutDate);
-    }
-
-    public void set_hotel(String _stringHotel) {
-        _reservationManager.set_hotel(_stringHotel);
     }
 
     public void set_room(String _roomType, String _roomNum) {

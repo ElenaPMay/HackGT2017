@@ -3,7 +3,6 @@ package gatech.hotelme.Model;
 import java.util.Date;
 
 class Reservation {
-    private static int reservationCount = 0;
     private int _loginID;
     private String _ownerFirstName;
     private String _ownerLastName;
@@ -11,25 +10,38 @@ class Reservation {
     private double _ownerBillAmount;
     private Date _checkInDate;
     private Date _checkOutDate;
-    private Hotel _hotel;
+    private String _hotelID;
+
+    public String get_hotelID() {
+        return _hotelID;
+    }
+
+    public void set_hotelID(String _hotelID) {
+        this._hotelID = _hotelID;
+    }
+
     private Room _room;
     private boolean _checkedIn;
+    private static final HotelManager _hotelManager = HotelManager
+            .getInstance();
 
     Reservation() {
 
     }
 
-    Reservation(String ownerFirstName, String ownerLastName, int
+    Reservation(int reservationCount, String ownerFirstName, String
+            ownerLastName, int
             creditCardNum, double bill, Date checkInDate, Date checkOutDate,
-            Hotel hotel, Room room) {
-        _loginID = reservationCount++;
+            String hotelID, Room room) {
+        _loginID = reservationCount;
         _ownerFirstName = ownerFirstName;
         _ownerLastName = ownerLastName;
         _ownerCreditCardNumber = creditCardNum;
         _ownerBillAmount = bill;
         _checkInDate = checkInDate;
         _checkOutDate = checkOutDate;
-        _hotel = hotel;
+        _hotelID = hotelID;
+        _hotelManager.addReservation(hotelID, this);
         _room = room;
     }
 
@@ -59,10 +71,6 @@ class Reservation {
 
     Date get_checkOutDate() {
         return _checkOutDate;
-    }
-
-    Hotel get_hotel() {
-        return _hotel;
     }
 
     Room get_room() {
@@ -99,10 +107,6 @@ class Reservation {
 
     void set_checkOutDate(Date _checkOutDate) {
         this._checkOutDate = _checkOutDate;
-    }
-
-    void set_hotel(Hotel _hotel) {
-        this._hotel = _hotel;
     }
 
     void set_room(Room _room) {
