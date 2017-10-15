@@ -24,14 +24,19 @@ public class CheckInActivity extends AppCompatActivity {
         _hotelName = (TextView) findViewById(R.id.hotel_name);
         _hotelName.setText(_model.get_hotel_name());
 
-        _checkInDate = (TextView) findViewById(R.id.check_in_date);
-        _checkInDate.setText(_model.get_checkInDate());
+        _checkInDate = (TextView) findViewById(R.id.check_in_date_text);
+        _checkInDate.setText(_checkInDate.getText().toString() + "     " +
+                _model
+                .get_checkInDate());
 
-        _checkOutDate = (TextView) findViewById(R.id.check_out_date);
-        _checkOutDate.setText(_model.get_checkOutDate());
+        _checkOutDate = (TextView) findViewById(R.id.check_out_date_text);
+        _checkOutDate.setText(_checkOutDate.getText().toString() + "     " + _model
+                .get_checkOutDate());
 
         _reservationNumber = (TextView) findViewById(R.id.res_num);
-        _checkInDate.setText(_model.get_reservation_number());
+        _reservationNumber.setText(_reservationNumber.getText().toString() + "     " +
+                _model
+                .get_reservation_number());
 
     }
 

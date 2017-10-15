@@ -34,7 +34,7 @@
         tools:layout_editor_absoluteX="2dp"
         tools:layout_editor_absoluteY="-2dp"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"/>
 
     <TextView
         android:id="@+id/hotel_name"
@@ -57,9 +57,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/check_in_date_text"
-        android:layout_centerVertical="true"
+        android:layout_below="@+id/check_in_date_text"
+        android:layout_marginTop="39dp"
         android:fontFamily="sans-serif-condensed"
-        android:text="Check out date"
+        android:text="Check Out Date: "
         android:textColor="@color/common_google_signin_btn_text_dark_default"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="235dp"/>
@@ -78,53 +79,23 @@
         android:id="@+id/room_info_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/check_out_time_text"
-        android:layout_below="@+id/check_out_time_text"
-        android:layout_marginTop="18dp"
         android:fontFamily="sans-serif-condensed"
         android:text="Room Info:"
-        android:textColor="@color/common_google_signin_btn_text_dark_default"/>
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:layout_marginTop="39dp"
+        android:layout_below="@+id/check_out_date_text"
+        android:layout_alignStart="@+id/check_out_date_text"/>
 
     <TextView
         android:id="@+id/res_num"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/room_info_text"
-        android:layout_below="@+id/room_info_text"
-        android:layout_marginTop="13dp"
         android:fontFamily="sans-serif-condensed"
         android:text="Reservation Number:"
-        android:textColor="@color/common_google_signin_btn_text_dark_default"/>
-
-    <TextView
-        android:id="@+id/check_in_time_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/check_out_date_text"
-        android:layout_below="@+id/check_out_date_text"
-        android:layout_marginTop="20dp"
-        android:fontFamily="sans-serif-condensed"
-        android:text="Check in time:"
-        android:textColor="@color/common_google_signin_btn_text_dark_default"/>
-
-    <TextView
-        android:id="@+id/check_out_time_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/check_in_time_text"
-        android:layout_below="@+id/check_in_time_text"
-        android:layout_marginTop="18dp"
-        android:fontFamily="sans-serif-condensed"
-        android:text="Check out time:"
-        android:textColor="@color/common_google_signin_btn_text_dark_default"/>
-
-    <TextView
-        android:id="@+id/check_out_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/room_info"
-        android:layout_alignStart="@+id/check_in_time"
-        android:layout_alignTop="@+id/check_out_time_text" />
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:layout_marginTop="27dp"
+        android:layout_below="@+id/room_info_text"
+        android:layout_alignStart="@+id/check_out_date_text"/>
 
     <TextView
         android:id="@+id/note_to_users_text"
