@@ -1,10 +1,13 @@
 package gatech.hotelme.Model;
 
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Model {
     private static final Model instance = new Model();
+    private static final DateFormat _formatter = new SimpleDateFormat
+            ("MM/dd/yyyy");
     private final ReservationManager _reservationManager;
     private final HotelManager _hotelManager;
 
@@ -49,13 +52,13 @@ public class Model {
 
     public String get_checkInDate() {
         Date dateFormat =  _reservationManager.get_checkInDate();
-        String dateString = dateFormat.toString();
+        String dateString = _formatter.format(dateFormat);
         return dateString;
     }
 
     public String get_checkOutDate() {
         Date dateFormat = _reservationManager.get_checkOutDate();
-        String dateString = dateFormat.toString();
+        String dateString = _formatter.format(dateFormat);
         return dateString;
     }
 

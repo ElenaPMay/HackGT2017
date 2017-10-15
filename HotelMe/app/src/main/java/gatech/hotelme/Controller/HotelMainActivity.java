@@ -31,7 +31,7 @@ public class HotelMainActivity extends AppCompatActivity {
     }
 
     public void onResInfoPressed(View view){
-        startActivity(new Intent(getBaseContext(), HotelReservationActivity.class));
+        startActivity(new Intent(getBaseContext(), CheckInActivity.class));
     }
 
     public void oncallPressed(View v) {

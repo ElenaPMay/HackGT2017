@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import gatech.hotelme.Model.Model;
@@ -21,6 +22,16 @@ public class CheckInActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check_in);
+        Bundle bundle = getIntent().getExtras();
+        if (bundle == null) {
+            Button button = (Button) findViewById(R.id.checkInButton);
+            button.setEnabled(false);
+            button.setVisibility(View.GONE);
+        } else {
+            Button button = (Button) findViewById(R.id.checkInButton);
+            button.setEnabled(true);
+            button.setVisibility(View.VISIBLE);
+        }
         _hotelName = (TextView) findViewById(R.id.hotel_name);
         _hotelName.setText(_model.get_hotel_name());
 
