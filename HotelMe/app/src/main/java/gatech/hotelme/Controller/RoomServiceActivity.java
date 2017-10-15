@@ -1,6 +1,7 @@
 package gatech.hotelme.Controller;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,6 +20,8 @@ public class RoomServiceActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), "Order successfully submitted",
                 Toast.LENGTH_SHORT).show();
     }
+
+
 
 
 

@@ -17,8 +17,8 @@ class HotelManager {
     private static Map<String, Hotel> _hotels;
     private static DatabaseReference _databaseRef = FirebaseDatabase
             .getInstance().getReference();
-    private static DatabaseReference _testDatabse = _databaseRef.child("test");
-
+    private static DatabaseReference _hotelDatabase = _databaseRef.child
+            ("Hotel");
 
     private HotelManager() {
         _hotels = new HashMap<>();
@@ -26,6 +26,24 @@ class HotelManager {
 
     static HotelManager getInstance() {
         return _instance;
+    }
+
+    void setUp() {
+        _hotelDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot snap: dataSnapshot.getChildren()) {
+                    String hotelID = (String) snap.child("_hotelID").getValue();
+                    String name = (String) snap.child("_name").getValue();
+                    addHotel(hotelID, name);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 
     static void set_currentHotel(String hotelID, String name) {
@@ -40,9 +58,6 @@ class HotelManager {
         return _currentHotel.get_name();
     }
 
-    List<Reservation> get_rooms() {
-        return _currentHotel.get_rooms();
-    }
 
     List<Reservation> get_reservations() {
         return _currentHotel.get_reservations();
@@ -52,14 +67,32 @@ class HotelManager {
         _currentHotel.set_name(_name);
     }
 
-    //TODO
+
+
     Hotel getHotel(String name) {
-        return null;
+        return _hotels.get(name);
     }
 
-    //TODO
-    Room getRoom(String roomType, String roomNum) {
-        return null;
+    void addHotel(String hotelID, String name) {
+        Hotel hotel = new Hotel(hotelID, name);
+        _hotels.put(hotelID, hotel);
+        Map<String, Object> update = new HashMap<>();
+        update.put(hotelID, hotel);
+        _hotelDatabase.updateChildren(update);
     }
 
+    void login(String loginID) {
+        for (Hotel hotel: _hotels.values()) {
+            for (Reservation reservation: hotel.get_reservations()) {
+                if (String.valueOf(reservation.get_loginID()).equals(loginID)) {
+                    _currentHotel = hotel;
+                    return;
+                }
+            }
+        }
+    }
+
+    void addReservation(String hotelID, Reservation reservation) {
+        _hotels.get(hotelID).addReservation(reservation);
+    }
 }

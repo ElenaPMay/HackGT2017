@@ -10,13 +10,14 @@
         android:id="@+id/checkInButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Check In"
-        android:onClick="onCheckInPressed"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="428dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="23dp"/>
+        android:layout_marginBottom="23dp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:onClick="onCheckInPressed"
+        android:text="Check In"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="428dp" />
 
     <ImageButton
         android:id="@+id/imageButton"
@@ -29,7 +30,7 @@
         android:layout_alignParentStart="true" />
 
     <TextView
-        android:id="@+id/hotelName"
+        android:id="@+id/hotel_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="hotel name here"
@@ -56,8 +57,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Check In Date: "
-        android:layout_below="@+id/hotelName"
-        android:layout_toStartOf="@+id/hotelName"
+        android:layout_below="@+id/hotel_name"
+        android:layout_toStartOf="@+id/hotel_name"
         android:layout_marginTop="34dp" />
 
     <TextView
@@ -82,10 +83,10 @@
         android:id="@+id/check_in_time_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Check In time: "
-        android:layout_marginTop="20dp"
+        android:layout_alignStart="@+id/check_out_date_text"
         android:layout_below="@+id/check_out_date_text"
-        android:layout_alignStart="@+id/check_out_date_text"/>
+        android:layout_marginTop="20dp"
+        android:text="Check in time:" />
 
     <TextView
         android:id="@+id/check_out_time_text"

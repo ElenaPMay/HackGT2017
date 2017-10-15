@@ -72,11 +72,20 @@
         android:id="@+id/back_to_home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="26dp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:fontFamily="sans-serif-condensed"
         android:onClick="onHomePressed"
         android:text="Home"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
         tools:layout_editor_absoluteX="171dp"
-        tools:layout_editor_absoluteY="463dp"
-        android:layout_marginBottom="26dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        tools:layout_editor_absoluteY="463dp" />
+
+    \
+        android:layout_alignBottom="@+id/user_name"
+        android:layout_alignEnd="@+id/room_key_qr_code"
+        android:layout_marginEnd="17dp"
+        app:srcCompat="@drawable/black_background" />
 </RelativeLayout>

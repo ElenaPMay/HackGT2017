@@ -6,11 +6,9 @@ import java.util.List;
 class Hotel {
     private String _hotelID;
     private String _name;
-    private List<Reservation> _rooms;
     private List<Reservation> _reservations;
 
     Hotel() {
-        _rooms = new LinkedList<>();
         _reservations = new LinkedList<>();
     }
 
@@ -28,10 +26,6 @@ class Hotel {
         return _name;
     }
 
-    List<Reservation> get_rooms() {
-        return _rooms;
-    }
-
     List<Reservation> get_reservations() {
         return _reservations;
     }
@@ -44,11 +38,11 @@ class Hotel {
         this._name = _name;
     }
 
-    public void set_rooms(List<Reservation> _rooms) {
-        this._rooms = _rooms;
+    void set_reservations(List<Reservation> _reservations) {
+        this._reservations = _reservations;
     }
 
-    public void set_reservations(List<Reservation> _reservations) {
-        this._reservations = _reservations;
+    void addReservation(Reservation reservation) {
+        _reservations.add(reservation);
     }
 }

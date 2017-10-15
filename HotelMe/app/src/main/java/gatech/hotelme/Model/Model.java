@@ -4,12 +4,22 @@ import java.util.Date;
 
 public class Model {
     private static final Model instance = new Model();
-    private static final ReservationManager _reservationManager =
-            ReservationManager.getInstance();
-    private final HotelManager _hotelManager = HotelManager.getInstance();
+    private final ReservationManager _reservationManager;
+    private final HotelManager _hotelManager;
 
     private Model() {
+        _reservationManager = ReservationManager.getInstance();
+        _hotelManager = HotelManager.getInstance();
+        setUp();
+    }
 
+    private void setUp() {
+        _hotelManager.addHotel("hotelid", "Marriott");
+        _reservationManager.addReservation("12392", "first", "last",
+                "23234329", "23.0",
+                "10/03/2017", "10/04/2017", "hotelid", "QUEEN", "17");
+        _reservationManager.setUp();
+        _hotelManager.setUp();
     }
 
     public static Model getInstance() {
@@ -44,9 +54,10 @@ public class Model {
         return _reservationManager.get_checkOutDate();
     }
 
-    public Hotel get_hotel() {
-        return _reservationManager.get_hotel();
+    public String get_hotel_name() {
+        return _hotelManager.get_name();
     }
+
 
     public Room get_room() {
         return _reservationManager.get_room();
@@ -72,19 +83,27 @@ public class Model {
         _reservationManager.set_checkOutDate(_stringCheckOutDate);
     }
 
-    public void set_hotel(String _stringHotel) {
-        _reservationManager.set_hotel(_stringHotel);
-    }
-
     public void set_room(String _roomType, String _roomNum) {
         _reservationManager.set_room(_roomType, _roomNum);
     }
 
     public int login(String _loginID) {
-        return 0;
+        if (_reservationManager.login(_loginID) == 0) {
+            _hotelManager.login(_loginID);
+            return 0;
+        }
+        return 1;
     }
 
     public boolean isCheckedIn() {
-        return false;
+        return _reservationManager.is_checkedIn();
+    }
+
+    public void addHotel(String hotelID, String name) {
+        _hotelManager.addHotel(hotelID, name);
+    }
+
+    public void set_checkedIn(boolean checkedIn) {
+        _reservationManager.set_checkedIn(checkedIn);
     }
 }

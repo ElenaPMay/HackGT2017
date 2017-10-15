@@ -18,7 +18,7 @@
         android:layout_alignParentEnd="true" />
 
 <TextView
-    android:id="@+id/hotelName"
+    android:id="@+id/hotel_name"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="hotel name here"
@@ -47,7 +47,7 @@
     android:layout_height="wrap_content"
     android:text="Check In Date: "
     android:layout_marginTop="34dp"
-    android:layout_below="@+id/hotelName"
+    android:layout_below="@+id/hotel_name"
     android:layout_alignParentStart="true"
     android:layout_marginStart="14dp"/>
 

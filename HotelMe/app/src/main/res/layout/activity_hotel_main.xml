@@ -10,68 +10,92 @@
         android:id="@+id/room_key"
         android:layout_width="140dp"
         android:layout_height="50dp"
-        android:text="Get Room Key"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:fontFamily="sans-serif-condensed"
         android:onClick="onGetKeyPressed"
+        android:text="Get Room Key"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
         tools:layout_editor_absoluteX="122dp"
         tools:layout_editor_absoluteY="177dp"
-        android:layout_above="@+id/call_service"
-        android:layout_alignEnd="@+id/call_service"
-        android:layout_marginBottom="28dp" />
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:id="@+id/call_service"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:fontFamily="sans-serif-condensed"
+        android:onClick="oncallPressed"
         android:text="Call Front Desk"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
         tools:layout_editor_absoluteX="121dp"
         tools:layout_editor_absoluteY="249dp"
-        android:layout_marginBottom="18dp"
-        android:layout_above="@+id/reservation_info"
-        android:layout_alignEnd="@+id/reservation_info" />
+        android:layout_alignBaseline="@+id/reservation_info"
+        android:layout_alignBottom="@+id/reservation_info"
+        android:layout_toStartOf="@+id/reservation_info"
+        android:layout_marginEnd="30dp" />
 
     <Button
         android:id="@+id/reservation_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:fontFamily="sans-serif-condensed"
         android:onClick="onResInfoPressed"
         android:text="Reservation Info"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
         tools:layout_editor_absoluteX="117dp"
         tools:layout_editor_absoluteY="324dp"
-        android:layout_marginBottom="26dp"
+        android:layout_marginEnd="41dp"
         android:layout_above="@+id/hotel_other"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="26dp" />
 
     <Button
         android:id="@+id/hotel_other"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/check_out"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="26dp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:fontFamily="sans-serif-condensed"
         android:onClick="onServicesPressed"
         android:text="Hotel Services and Amenities"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
         tools:layout_editor_absoluteX="80dp"
-        tools:layout_editor_absoluteY="391dp"
-        android:layout_marginBottom="26dp"
-        android:layout_above="@+id/check_out"
-        android:layout_centerHorizontal="true" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="384dp"
-        android:layout_height="152dp"
-        android:background="@drawable/marriott"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="0dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        tools:layout_editor_absoluteY="391dp" />
 
     <Button
         android:id="@+id/check_out"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="check out"
+        android:fontFamily="sans-serif-condensed"
         android:onClick="onCheckOutPressed"
+        android:text="check out"
         android:visibility="invisible"
         tools:layout_editor_absoluteX="147dp"
         tools:layout_editor_absoluteY="458dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/black_background"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/marriott"
+        android:layout_marginBottom="65dp"
+        android:layout_above="@+id/room_key"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

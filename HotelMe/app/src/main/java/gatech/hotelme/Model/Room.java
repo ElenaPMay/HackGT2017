@@ -8,7 +8,7 @@ class Room {
 
     }
 
-    Room(RoomType roomType, int roomNum, String hotelID, int reservationID) {
+    Room(RoomType roomType, int roomNum) {
         _roomType = roomType;
         _roomNumber = roomNum;
     }

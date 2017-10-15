@@ -8,153 +8,200 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="384dp"
-        android:layout_height="276dp"
-        android:background="@drawable/marriott"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/black_background"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/close_text"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/marriott"
+        android:layout_marginBottom="353dp"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true" />
 
     <TextView
-        android:id="@+id/hours_text"
+        android:id="@+id/hours"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hours"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="160dp"
-        tools:layout_editor_absoluteY="291dp"
-        android:layout_marginTop="14dp"
-        android:layout_below="@+id/imageView3"
+        android:layout_marginTop="189dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="HOURS"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
     <TextView
-        android:id="@+id/close_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Close"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="270dp"
-        tools:layout_editor_absoluteY="338dp"
-        android:layout_marginTop="15dp"
-        android:layout_below="@+id/hours_text"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="46dp" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/close_text"
-        android:layout_marginEnd="38dp"
-        android:layout_toStartOf="@+id/close_text"
-        android:text="Open"
-        android:textStyle="bold" />
-
-    <TextClock
-        android:id="@+id/front_desk_open"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="23dp"
-        android:layout_below="@+id/textView"
-        android:layout_alignStart="@+id/pool_open" />
-
-    <TextClock
-        android:id="@+id/front_desk_close"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/pool_open"
-        android:layout_toEndOf="@+id/textView" />
-
-    <TextClock
-        android:id="@+id/pool_open"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/front_desk_open"
-        android:layout_marginTop="14dp"
-        android:layout_toEndOf="@+id/hours_text" />
-
-    <TextClock
-        android:id="@+id/pool_close"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/front_desk_close"
-        android:layout_alignTop="@+id/pool_open" />
-
-    <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Location"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="18sp"
         android:textStyle="bold"
-        android:layout_alignBaseline="@+id/textView"
-        android:layout_alignBottom="@+id/textView"
-        android:layout_toStartOf="@+id/hours_text"
-        android:layout_marginEnd="36dp" />
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@+id/hours"
+        android:layout_marginEnd="39dp" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Front Desk: "
-        android:layout_alignBaseline="@+id/front_desk_open"
-        android:layout_alignBottom="@+id/front_desk_open"
-        android:layout_alignEnd="@+id/textView2" />
+        android:layout_alignBottom="@+id/location"
+        android:layout_centerHorizontal="true"
+        android:text="Open"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Pool:"
-        android:layout_alignBaseline="@+id/pool_open"
-        android:layout_alignBottom="@+id/pool_open"
-        android:layout_alignEnd="@+id/textView3" />
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_marginStart="37dp"
+        android:layout_toEndOf="@+id/hours"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Close"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/textView2"
-        android:layout_below="@+id/textView4"
-        android:layout_marginTop="15dp"
-        android:text="Gym:" />
+        android:layout_marginTop="40dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Front Desk:"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:layout_below="@+id/location"
+        android:layout_alignStart="@+id/location"
+        android:layout_marginStart="18dp" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textView2"
+        android:layout_marginTop="33dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Gym:"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
         android:layout_below="@+id/textView5"
-        android:layout_marginTop="18dp"
-        android:text="Resturant:" />
+        android:layout_alignEnd="@+id/textView5" />
 
-    <TextClock
-        android:id="@+id/gym_open"
+    <TextView
+        android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/pool_open"
-        android:layout_alignTop="@+id/textView5" />
+        android:layout_alignEnd="@+id/textView6"
+        android:layout_below="@+id/textView6"
+        android:layout_marginTop="30dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Pool:"
+        android:textColor="@color/common_google_signin_btn_text_dark_default" />
 
-    <TextClock
-        android:id="@+id/gym_close"
+    <TextView
+        android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/pool_close"
-        android:layout_alignTop="@+id/gym_open" />
+        android:layout_alignEnd="@+id/textView14"
+        android:layout_below="@+id/textView14"
+        android:layout_marginTop="27dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Resturant:"
+        android:textColor="@color/common_google_signin_btn_text_dark_default" />
 
-    <TextClock
-        android:id="@+id/resturant_open"
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView6"
+        android:layout_alignStart="@+id/textView3"
+        android:fontFamily="sans-serif-condensed"
+        android:text="7:00 AM"
+        android:textColor="@color/common_google_signin_btn_text_dark_default" />
+
+    <TextView
+        android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView6"
         android:layout_alignBottom="@+id/textView6"
-        android:layout_alignStart="@+id/gym_open" />
+        android:layout_alignStart="@+id/textView16"
+        android:fontFamily="sans-serif-condensed"
+        android:text="5:30 AM"
+        android:textColor="@color/common_google_signin_btn_text_dark_default" />
 
-    <TextClock
-        android:id="@+id/resturant_close"
+    <TextView
+        android:id="@+id/textView18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/gym_close"
-        android:layout_alignTop="@+id/resturant_open" />
+        android:layout_alignBaseline="@+id/textView14"
+        android:layout_alignBottom="@+id/textView14"
+        android:layout_alignStart="@+id/textView17"
+        android:fontFamily="sans-serif-condensed"
+        android:text="9:00 AM"
+        android:textColor="@color/common_google_signin_btn_text_dark_default" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView16"
+        android:layout_alignBottom="@+id/textView16"
+        android:layout_alignStart="@+id/textView4"
+        android:fontFamily="sans-serif-condensed"
+        android:text="12:00 AM"
+        android:textColor="@color/common_google_signin_btn_text_dark_default" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView17"
+        android:layout_alignBottom="@+id/textView17"
+        android:layout_alignStart="@+id/textView20"
+        android:fontFamily="sans-serif-condensed"
+        android:text="11:00 PM"
+        android:textColor="@color/common_google_signin_btn_text_dark_default" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView18"
+        android:layout_alignBottom="@+id/textView18"
+        android:layout_alignStart="@+id/textView21"
+        android:fontFamily="sans-serif-condensed"
+        android:text="8:00 PM"
+        android:textColor="@color/common_google_signin_btn_text_dark_default" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView19"
+        android:layout_alignBottom="@+id/textView19"
+        android:layout_alignStart="@+id/textView22"
+        android:fontFamily="sans-serif-condensed"
+        android:text="9:00 PM"
+        android:textColor="@color/common_google_signin_btn_text_dark_default" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView15"
+        android:layout_alignBottom="@+id/textView15"
+        android:layout_alignStart="@+id/textView18"
+        android:fontFamily="sans-serif-condensed"
+        android:text="11:00 AM"
+        android:textColor="@color/common_google_signin_btn_text_dark_default" />
 </RelativeLayout>
