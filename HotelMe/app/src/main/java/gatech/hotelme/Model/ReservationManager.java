@@ -162,8 +162,8 @@ class ReservationManager {
         return _currentReservation.get_checkOutDate();
     }
 
-    Room get_room() {
-        return _currentReservation.get_room();
+    int get_room_num() {
+        return _currentReservation.get_room().get_roomNumber();
     }
 
     boolean is_checkedIn() {
