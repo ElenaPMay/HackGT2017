@@ -1,5 +1,6 @@
 package gatech.hotelme.Model;
 
+import java.text.DateFormat;
 import java.util.Date;
 
 public class Model {
@@ -46,18 +47,27 @@ public class Model {
         return _reservationManager.get_bill();
     }
 
-    public Date get_checkInDate() {
-        return _reservationManager.get_checkInDate();
+    public String get_checkInDate() {
+        Date dateFormat =  _reservationManager.get_checkInDate();
+        String dateString = dateFormat.toString();
+        return dateString;
     }
 
-    public Date get_checkOutDate() {
-        return _reservationManager.get_checkOutDate();
+    public String get_checkOutDate() {
+        Date dateFormat = _reservationManager.get_checkOutDate();
+        String dateString = dateFormat.toString();
+        return dateString;
     }
 
     public String get_hotel_name() {
         return _hotelManager.get_name();
     }
 
+    public String get_reservation_number() {
+        int curr = _reservationManager.get_loginNum();
+        String num = String.valueOf(curr);
+        return num;
+    }
 
     public Room get_room() {
         return _reservationManager.get_room();

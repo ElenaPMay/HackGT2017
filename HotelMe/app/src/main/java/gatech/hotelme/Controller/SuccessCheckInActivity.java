@@ -13,6 +13,8 @@ public class SuccessCheckInActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_success_check_in);
+
+
     }
 
     public void onHomePressed(View view) {
